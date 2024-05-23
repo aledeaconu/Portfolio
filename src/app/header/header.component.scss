@@ -1,0 +1,58 @@
+header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.195);
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  background-color: rgb(31,31,31);
+  top: 0;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    padding-left: 32px;
+    padding-right: 32px;
+    p{
+        color: white;
+        font-family: 'Heartbit';
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      li {
+        margin: 0 15px;
+        a {
+          position: relative;
+          text-decoration: none;
+          color: #21a0e0;
+          transition: color 0.3s ease;
+          font-weight: 500;
+
+          &:hover {
+            color: rgb(131, 203, 255);
+            font-weight: 300;
+          }
+          &::after {
+            content: "01.";
+            position: absolute;
+            right: -1px;
+            top: -8px;
+            color: white;
+            font-size: 10px;
+          }
+        }
+      }
+      li:nth-child(2) a::after {
+        content: " 02.";
+      }
+
+      li:nth-child(3) a::after {
+        content: " 03.";
+      }
+    }
+  }
+}

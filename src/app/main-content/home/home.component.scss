@@ -1,0 +1,63 @@
+section {
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 90px;
+  div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    p {
+      color: white;
+      z-index: 9;
+    }
+
+    img {
+      width: 71%;
+      height: 300px;
+      position: absolute;
+      right: calc(50% - -10px);
+      transform: translate(50%, 35%);
+    }
+  }
+  .lt{
+    color:blue
+  }
+}
+
+.btns-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 33vh;
+  gap: 60px;
+  cursor: pointer;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 331px;
+ 
+}
+
+svg {
+  filter: drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.1));
+  transform: translateY(0);
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+}
+
+svg:hover {
+  transform: translateY(-4px);
+  filter: drop-shadow(0px 8px 12px rgba(255, 255, 255, 0.2));
+}
+
+.svg-container {
+  margin: 20px 0;
+  svg {
+      display: block;
+      margin: auto;
+      max-width: 100%;
+      height: auto;
+  }
+}
+

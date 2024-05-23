@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+body{
+   background-color: rgb(31,31,31);
+    margin: 0;
+    font-family: 'Heartbit';
+}
+
+@font-face {
+    font-family: 'Heartbit' ;
+    src: url(./assets/fonts/Heartbit-Bold.otf);
+}
+
