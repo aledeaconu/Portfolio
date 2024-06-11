@@ -1,10 +1,21 @@
+// header.component.ts
 import { Component } from '@angular/core';
+import { CommonService } from '../service/common.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  constructor(private commonService: CommonService) {}
 
+  scrollToAnchor(anchor: string) {
+    this.commonService.scrollToAnchor(anchor);
+  }
+
+  // Getter pentru a accesa selectedAnchor din CommonService
+  get selectedAnchor(): string {
+    return this.commonService.selectedAnchor;
+  }
 }

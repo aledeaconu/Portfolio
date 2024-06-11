@@ -1,10 +1,13 @@
 <header>
   <nav>
-    <p>Alexandra Deaconu</p>
-    <ul class="menu">
-      <li><a href="#">// home</a></li>
-      <li><a href="#">// projects</a></li>
-      <li><a href="#">// contact</a></li>
-    </ul>
+    <div>
+      <img (click)="scrollToAnchor('home')" src="./../../assets/img/coding.png">
+    </div>
+<ul class="menu">
+  <li><a [class.selected]="selectedAnchor === 'home'" (click)="scrollToAnchor('home')">// home</a></li>
+  <li><a [class.selected]="selectedAnchor === 'about'" (click)="scrollToAnchor('about')">// about</a></li>
+  <li><a [class.selected]="selectedAnchor === 'projects'" (click)="scrollToAnchor('projects')">// projects</a></li>
+  <li><a [class.selected]="selectedAnchor === 'contact'" (click)="scrollToAnchor('contact')">// contact</a></li>
+</ul>
   </nav>
 </header>

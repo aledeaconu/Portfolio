@@ -1,48 +1,25 @@
-<section>
-  <div class="right-side">
-    <p>Nice to meet you!</p>
+<section id="home">
+  <div class="background-shapes" >
+    <img src="./assets/img/code-shape.png" class="shape shape1" alt="shape">
+   
+    <img src="./assets/img/code-shape.png" class="shape shape2" alt="shape">
   </div>
-  <div class="left-side">
-    <img src="../../../assets/img/html code.png" />
+  <div class="greeting-section" >
+    <div class="text-area">
+      <h1 class="welcome-text">Hello World</h1>
+      <span class="name-text">I'm Alexandra</span>
+      <h2 class="role-text">Creative Frontend Developer</h2>
+      <div class="vertical-container">
+        <span class="vertical-text">Innovator</span>
+      </div>
+    </div>
+    <div class="personal-pic-area">
+      <img class="personal-pic" src="./assets/img/me-pic.png"  />
+    </div>
   </div>
- 
+
+  <div class="buttons-section">
+    <button class="btn" (click)="scrollToAnchor('about')">Learn More</button>
+    <button class="btn" (click)="scrollToAnchor('projects')">My Work</button>
+  </div>
 </section>
-
-
-<div class="btns-option">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="200"
-      height="50"
-      viewBox="0 0 200 50"
-    >
-      <rect width="200" height="50" fill="#111" rx="25" ry="25" />
-      <text x="100" y="32" text-anchor="middle" fill="#FFF" font-size="16">
-        More infos
-      </text>
-    </svg>
-
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="200"
-      height="50"
-      viewBox="0 0 200 50"
-    >
-      <rect width="200" height="50" fill="#111" rx="25" ry="25" />
-      <text x="100" y="32" text-anchor="middle" fill="#FFF" font-size="16">
-        ProJects
-      </text>
-    </svg>
-    
-    
-  </div>
-
-  <div class="svg-container">
-    <svg width="100%" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,200 Q300,100 600,200 T1200,200" stroke="#21a0e0" fill="transparent" stroke-width="2"/>
-      <path d="M0,150 Q300,250 600,150 T1200,150" stroke="#ff6347" fill="transparent" stroke-width="2"/>
-      <path d="M0,250 Q300,350 600,250 T1200,250" stroke="#32CD32" fill="transparent" stroke-width="2"/>
-    </svg>
-  </div>
-
-

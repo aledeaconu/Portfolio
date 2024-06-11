@@ -9,7 +9,15 @@ import { MainContentComponent } from './main-content/main-content.component';
 import { HomeComponent } from './main-content/home/home.component';
 import { ProjectsComponent } from './main-content/projects/projects.component';
 import { ContactComponent } from './main-content/contact/contact.component';
+import { AboutComponent } from './main-content/about/about.component';
+import { IconComponent } from './drawable-objects/icon/icon.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,18 +27,23 @@ import { ContactComponent } from './main-content/contact/contact.component';
     MainContentComponent, 
     HomeComponent, 
     ProjectsComponent, 
-    ContactComponent
+    ContactComponent, AboutComponent, IconComponent, FooterComponent
 
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule
+    RouterModule,
+    MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule
    
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

@@ -1,28 +1,76 @@
-<section>
-  <div>
-    <h1>Contact</h1>
-    <p>Alexandra Deaconu <br>
-        Email: <a href="mailto:alexandraa.deaconu@gmail.com">alexandraa.deaconu&#64;gmail.com</a>
-      </p>
-    <h1>OR</h1>
-    <p>Get in touch with me vie social media</p>
+<section id="contact">
+  <div class="contact-container" >
+    <div class="label-left">
+      <div class="line"></div>
+      <span class="labels-span">Contact</span>
+    </div>
+    <div class="contact-message">
+      <span>Get in Touch</span>
+    </div>
   </div>
 
-  <ul>
-    <li>
-      <a href="https://github.com/aledeaconu"
-        ><img src="../../../assets/img/github-icon.png" alt="Image 1"
-      /></a>
-    </li>
-    <li>
-      <a href="https://www.instagram.com/aledeaconu/">
-        <img src="../../../assets/img/instagram-icon.png" alt="Image 3" />
+  <div class="contact-options">
+    <div class="contact-form">
+      <p>Connect with me below!</p>
+      <div class="flex">
+        <mat-form-field>
+          <mat-label>First Name</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Last Name</mat-label>
+          <input matInput required />
+        </mat-form-field>
+      </div>
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          [formControl]="email"
+          required
+        />
+        <mat-error *ngIf="email.invalid">{{ errorMessage }}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Message</mat-label>
+        <textarea matInput required></textarea>
+      </mat-form-field>
+      <button class="btn">Send</button>
+    </div>
+    <div class="socials">
+    
+      <div class="content">
+        <div class="arrow">
+          <div class="curve"></div>
+          <div class="point"></div>
+        </div>
+      </div> 
+      <div class="content">
+        <h1>My social media</h1>
+      </div>
+    </div>
+    <div class="socials-icons">
+      <a href=''>
+        <img src="../../../assets/img/icons/whatsapp-icon.png" />
       </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/alexandra-deaconu">
-        <img src="../../../assets/img/linked-in-icon.png" alt="Image 2" />
+
+      <a href="https://www.instagram.com/aledeaconu/" target="_blank">
+        <img src="../../../assets/img/icons/instagram-icon.png" />
       </a>
-    </li>
-  </ul>
+
+      <a href="https://www.linkedin.com/in/alexandra-deaconu/" target="_blank">
+        <img src="../../../assets/img/icons/linked-in-icon.png" />
+      </a>
+
+      <a href="https://github.com/aledeaconu" target="_blank">
+        <img src="../../../assets/img/icons/github-icon.png" />
+      </a>
+
+      
+    </div>
+
+  </div>
+
+
 </section>

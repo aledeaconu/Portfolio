@@ -1,30 +1,208 @@
-section{
-    color: white;
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin-bottom: 100px;
+  min-height: 100vh;
+  .contact-container {
+    width: 100%;
+    align-items: baseline;
+    display: flex;
+    flex-direction: column;
+
+    .contact-label {
+      display: flex;
+      text-transform: uppercase;
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    .line {
+      margin-right: 10px;
+    }
+    .contact-message {
+      display: flex;
+      color: #555;
+      width: 100%;
+      justify-content: left;
+      padding-left: 116px;
+      margin-top: 10px;
+      font-size: 24px;
+    }
+  }
+
+  .contact-options {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    h1{
+    justify-content: center;
+    gap: 100px;
+    margin-left: 43px;
+    .contact-form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background-color: rgb(12, 12, 12);
+      border: 1px solid #ffffff21;
+      border-radius: 25px;
+      width: 39%;
+      margin-top: 45px;
+      padding: 20px;
+
+      .btn {
+        margin-top: 0;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      .flex {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        width: 100%;
+        justify-content: space-between;
+        gap: 16px;
+      }
     }
-    img{
-        width: 50px;
-        height: 50px;
-        cursor: pointer;
+
+    mat-form-field {
+      width: 100%;
+      margin-bottom: 20px;
     }
-    ul{
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-        li{
-            display: inline-block;
-            
+
+    .socials {
+      .content {
+        float: left;
+        width: 50%;
+        height: 500px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        position: relative;
+        h1 {
+          font-family: '"Titillium"';
+          text-transform: uppercase;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          position: absolute;
+          height: 150px;
         }
-     
+      }
     }
-    a{
-        text-decoration: none;
-        color: #21a0e0;
+  }
+}
+
+.socials-icons {
+  display: flex;
+  justify-self: center;
+  flex-wrap: wrap;
+  a {
+    position: relative;
+    display: inline-block;
+  }
+
+  a:nth-child(1) {
+    top: 85px;
+    transform: rotate(-5deg);
+    &:hover {
+      transform: rotate(-2deg);
     }
+  }
+
+  a:nth-child(2) {
+    top: 225px;
+    right: 15px;
+    transform: rotate(3deg);
+    &:hover {
+      transform: rotate(5deg);
+    }
+  }
+
+  a:nth-child(3) {
+    top: 47px;
+    right: 15px;
+    transform: rotate(-2deg);
+    &:hover {
+      transform: rotate(0deg);
+    }
+  }
+
+  a:nth-child(4) {
+    top: 125px;
+    right: 120px;
+    transform: rotate(4deg);
+    &:hover {
+      transform: rotate(6deg);
+    }
+  }
+  img {
+    width: 100px;
+    height: 100px;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  a:nth-child(1) img {
+    animation-delay: 0.5s;
+  }
+  a:nth-child(2) img {
+    animation-delay: 0.8s;
+  }
+  a:nth-child(3) img {
+    animation-delay: 0.2s;
+  }
+  a:nth-child(4) img {
+    animation-delay: 0.4s;
+  }
+}
+
+/* Arrow */
+
+.arrow {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+}
+
+.arrow .curve {
+  border: 2px solid #17b4be;
+  border-color: transparent transparent transparent #17b4be;
+  height: 360px;
+  width: 1200px;
+  border-radius: 230px 0 0 150px;
+}
+
+.arrow .point {
+  position: absolute;
+  left: 40px;
+  top: 315px;
+}
+
+.arrow .point:before,
+.arrow .point:after {
+  border: 1px solid #17b4be;
+  height: 25px;
+  content: "";
+  position: absolute;
+}
+
+.arrow .point:before {
+  top: -11px;
+  left: -11px;
+  transform: rotate(-74deg);
+  -webkit-transform: rotate(-74deg);
+  -moz-transform: rotate(-74deg);
+  -ms-transform: rotate(-74deg);
+}
+
+.arrow .point:after {
+  top: -20px;
+  left: 5px;
+  transform: rotate(12deg);
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  -ms-transform: rotate(12deg);
 }

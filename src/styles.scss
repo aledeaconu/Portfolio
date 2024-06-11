@@ -1,13 +1,203 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use "@angular/material" as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$Portfolio-primary: mat.define-palette(mat.$indigo-palette);
+$Portfolio-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$Portfolio-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$Portfolio-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $Portfolio-primary,
+      accent: $Portfolio-accent,
+      warn: $Portfolio-warn,
+    ),
+    typography: mat.define-typography-config(),
+    density: 0,
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($Portfolio-theme);
+
 /* You can add global styles to this file, and also import other style files */
 
-body{
-   background-color: rgb(31,31,31);
-    margin: 0;
-    font-family: 'Heartbit';
+body {
+  background-color: rgb(0, 0, 0);
+  margin: 0;
+  font-family: "Titillium";
+  color: white;
+  overflow-x: hidden;
 }
 
 @font-face {
-    font-family: 'Heartbit' ;
-    src: url(./assets/fonts/Heartbit-Bold.otf);
+  font-family: "Heartbit";
+  src: url(./assets/fonts/Heartbit-Bold.otf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url(./assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Whocats";
+  src: url(./assets/fonts/Whocats.ttf);
+}
+
+@font-face {
+  font-family: "Baloo-Regular";
+  src: url(./assets/fonts/Baloo-Regular.ttf);
+}
+@font-face {
+  font-family: "Tiny5";
+  src: url(./assets/fonts/Tiny5-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Titillium";
+  src: url(./assets/fonts/TitilliumWeb-SemiBoldItalic.ttf);
+}
+.btn {
+  font-family: "Titillium";
+  font-size: 16px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(to right, #4b4734, #00d9ff);
+  color: #111;
+
+  outline: none;
+  transition: all 0.3s ease;
+  margin-top: 70px;
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+.labels {
+  font-size: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  font-family: "Titillium";
+  text-transform: uppercase;
+  .labels-span {
+    flex-shrink: 0;
+    padding-right: 20px;
+  }
+  @media (max-width: 1000px) {
+    font-size: 26px;
+  }
+}
+.label-left {
+  font-size: 50px;
+  margin-bottom: 20px;
+  position: relative;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  @media (max-width: 1000px) {
+    font-size: 30px;
+    width: 30%;
+  }
+}
+.line {
+  height: 5px;
+  background-color: rgb(11, 180, 190);
+  width: 100px;
+  flex-grow: 1;
+}
+.background-shapes {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+.shape {
+  position: absolute;
+  opacity: 0.2;
+  animation: float 6s ease-in-out infinite;
+  z-index: -1;
+}
+
+p {
+  font-family: "Titillium";
+  text-transform: uppercase;
+  @media (max-width: 1000px) {
+    font-size: 16px;
+  }
+}
+
+//Animations
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 

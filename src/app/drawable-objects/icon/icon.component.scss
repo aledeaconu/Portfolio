@@ -1,0 +1,21 @@
+.icons-container {
+  position: relative;
+  z-index: -1;
+}
+
+.icons {
+ position: absolute;
+  opacity: 0.1;
+  img {
+    width: 350px;
+    animation: float 2s ease-in-out infinite;
+  }
+}
+
+.separator {
+  opacity: 0.2;
+  margin-left: 50px;
+  position: absolute !important;
+  top: 75%;
+  overflow: hidden;
+}

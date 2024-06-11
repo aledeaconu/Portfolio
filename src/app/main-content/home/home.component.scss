@@ -1,63 +1,159 @@
+
 section {
-  margin-top: 150px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 90px;
-  div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    p {
-      color: white;
-      z-index: 9;
-    }
-
-    img {
-      width: 71%;
-      height: 300px;
-      position: absolute;
-      right: calc(50% - -10px);
-      transform: translate(50%, 35%);
-    }
-  }
-  .lt{
-    color:blue
-  }
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
-.btns-option {
+.shape1 {
+  top: 10%;
+  left: 10%;
+  width: 200px;
+}
+
+.shape2 {
+  top: 50%;
+  right: 15%;
+  width: 150px;
+}
+
+
+
+
+.greeting-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 33vh;
-  gap: 60px;
-  cursor: pointer;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 331px;
+  gap: 40px;
+  position: relative;
+}
+
+.text-area {
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
  
+  animation: fadeIn 2s ease-in-out;
+}
+h1{
+  font-family: 'Heartbit';
 }
 
-svg {
-  filter: drop-shadow(0px 4px 6px rgba(255, 255, 255, 0.1));
-  transform: translateY(0);
-  transition: transform 0.3s ease, filter 0.3s ease;
-
+.welcome-text {
+  font-size: 56px;
+  margin-bottom: 56px;
+  font-weight: bold;
+  animation: slideInLeft 1.5s ease-in-out;
 }
 
-svg:hover {
-  transform: translateY(-4px);
-  filter: drop-shadow(0px 8px 12px rgba(255, 255, 255, 0.2));
+.name-text {
+  position: relative;
+  font-size: 36px;
+  color: #17b4b2;
+  animation: slideInLeft 1.8s ease-in-out;
+  
 }
 
-.svg-container {
-  margin: 20px 0;
-  svg {
-      display: block;
-      margin: auto;
-      max-width: 100%;
-      height: auto;
+.role-text {
+  font-size: 28px;
+  font-style: italic;
+  animation: slideInLeft 2.1s ease-in-out;
+}
+
+.vertical-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -86px;
+  
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-size: 14px;
+  
+    position: absolute;
+    left: -50px;
+    
+    animation: slideInRight 2.4s ease-in-out;
   }
 }
 
+
+
+.personal-pic-area {
+  width: 70%;
+  position: relative;
+  z-index: 9;
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    animation: zoomIn 2.5s ease-in-out;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+.buttons-section {
+  display: flex;
+  gap: 76px;
+  margin-top: 85px;
+  animation: fadeIn 3s ease-in-out;
+}
+
+.btn {
+  background-color: rgba(23, 180, 178, 0.8);
+  border: none;
+  border-radius: 25px;
+  padding: 15px 30px;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+  &:hover{
+    
+      background-color: rgba(23, 180, 178, 1);
+      transform: scale(1.05);
+    
+  }
+}
+
+
+
+
+@media (max-width: 1000px) {
+  .greeting-section {
+    flex-direction: column;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    left: auto;
+    top: auto;
+    margin-bottom: 10px;
+    animation: none;
+  }
+
+  .buttons-section {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
