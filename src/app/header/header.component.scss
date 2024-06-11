@@ -13,9 +13,11 @@ header {
     justify-content: space-around;
     padding-left: 32px;
     padding-right: 32px;
+   
     div {
       display: flex;
       align-items: center;
+ 
     }
     img {
       width: 50px;
@@ -24,6 +26,10 @@ header {
       margin-top: 15px;
       margin-right: 25px;
       cursor: pointer;
+      @media (max-width: 1000px) {
+        width: 25px;
+      height: 25px;
+      }
     }
 
     ul {
@@ -55,6 +61,9 @@ header {
             color: white;
             font-size: 10px;
           }
+        }
+        @media (max-width: 1000px) {
+          margin: 0px 6px;
         }
       }
       li:nth-child(2) a::after {

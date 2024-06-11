@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field'
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterComponent } from './footer/footer.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FooterComponent } from './footer/footer.component';
     MainContentComponent, 
     HomeComponent, 
     ProjectsComponent, 
-    ContactComponent, AboutComponent, IconComponent, FooterComponent
+    ContactComponent, AboutComponent, IconComponent, FooterComponent, SidenavComponent
 
 
   ],

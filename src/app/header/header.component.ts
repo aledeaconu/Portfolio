@@ -14,7 +14,6 @@ export class HeaderComponent {
     this.commonService.scrollToAnchor(anchor);
   }
 
-  // Getter pentru a accesa selectedAnchor din CommonService
   get selectedAnchor(): string {
     return this.commonService.selectedAnchor;
   }

@@ -3,21 +3,16 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   margin-bottom: 100px;
   min-height: 100vh;
+
   .contact-container {
     width: 100%;
     align-items: baseline;
     display: flex;
     flex-direction: column;
 
-    .contact-label {
-      display: flex;
-      text-transform: uppercase;
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
+   
     .line {
       margin-right: 10px;
     }
@@ -30,6 +25,7 @@ section {
       margin-top: 10px;
       font-size: 24px;
     }
+    
   }
 
   .contact-options {
