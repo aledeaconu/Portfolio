@@ -1,76 +1,54 @@
 <section id="contact">
-  <div class="contact-container" >
+  <div class="contact-container">
     <div class="label-left">
       <div class="line"></div>
       <span class="labels-span">Contact</span>
     </div>
-    <div class="contact-message">
-      <span>Get in Touch</span>
-    </div>
   </div>
 
   <div class="contact-options">
-    <div class="contact-form">
-      <p>Connect with me below!</p>
+    <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+      <p>Get in touch!</p>
       <div class="flex">
         <mat-form-field>
           <mat-label>First Name</mat-label>
-          <input matInput required />
+          <input matInput required name="firstName" [(ngModel)]="contactData.firstName" />
         </mat-form-field>
         <mat-form-field>
           <mat-label>Last Name</mat-label>
-          <input matInput required />
+          <input matInput required name="lastName" [(ngModel)]="contactData.lastName" />
         </mat-form-field>
       </div>
       <mat-form-field>
-        <mat-label>Enter your email</mat-label>
-        <input
-          matInput
-          placeholder="pat@example.com"
-          [formControl]="email"
-          required
-        />
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="pat@example.com" [formControl]="email" required name="email" [(ngModel)]="contactData.email" />
         <mat-error *ngIf="email.invalid">{{ errorMessage }}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Message</mat-label>
-        <textarea matInput required></textarea>
+        <textarea matInput required name="message" [(ngModel)]="contactData.message"></textarea>
       </mat-form-field>
-      <button class="btn">Send</button>
-    </div>
-    <div class="socials">
-    
-      <div class="content">
-        <div class="arrow">
-          <div class="curve"></div>
-          <div class="point"></div>
+      <button type="submit" class="btn">Send</button>
+    </form>
+
+    <div class="socials-area">
+      <div class="socials">
+        <div class="content">
+          <div class="arrow">
+            <div class="curve"></div>
+            <div class="point"></div>
+          </div>
         </div>
-      </div> 
-      <div class="content">
-        <h1>My social media</h1>
+        <div class="content">
+          <h1>My social media</h1>
+        </div>
+      </div>
+      <div class="socials-icons">
+        <a href="https://wa.me/15111786993"><img src="../../../assets/img/icons/whatsapp-icon.png" /></a>
+        <a href="https://www.instagram.com/aledeaconu/" target="_blank"><img src="../../../assets/img/icons/instagram-icon.png" /></a>
+        <a href="https://www.linkedin.com/in/alexandra-deaconu/" target="_blank"><img src="../../../assets/img/icons/linked-in-icon.png" /></a>
+        <a href="https://github.com/aledeaconu" target="_blank"><img src="../../../assets/img/icons/github-icon.png" /></a>
       </div>
     </div>
-    <div class="socials-icons">
-      <a href=''>
-        <img src="../../../assets/img/icons/whatsapp-icon.png" />
-      </a>
-
-      <a href="https://www.instagram.com/aledeaconu/" target="_blank">
-        <img src="../../../assets/img/icons/instagram-icon.png" />
-      </a>
-
-      <a href="https://www.linkedin.com/in/alexandra-deaconu/" target="_blank">
-        <img src="../../../assets/img/icons/linked-in-icon.png" />
-      </a>
-
-      <a href="https://github.com/aledeaconu" target="_blank">
-        <img src="../../../assets/img/icons/github-icon.png" />
-      </a>
-
-      
-    </div>
-
   </div>
-
-
 </section>

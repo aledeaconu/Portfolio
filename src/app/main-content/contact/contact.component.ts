@@ -1,19 +1,39 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms'; 
+import { Component, inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 import { merge } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  http = inject(HttpClient);
+
   email = new FormControl('', [Validators.required, Validators.email]);
   errorMessage = '';
+  contactData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  };
+
+  post = {
+    endPoint: 'http://alexandra-deaconu.com/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    },
+  };
 
   constructor() {
-    merge(this.email.statusChanges, this.email.valueChanges)
-      .subscribe(() => this.updateErrorMessage());
+    merge(this.email.statusChanges, this.email.valueChanges).subscribe(() =>
+      this.updateErrorMessage()
+    );
   }
 
   updateErrorMessage() {
@@ -23,6 +43,23 @@ export class ContactComponent {
       this.errorMessage = 'Not a valid email';
     } else {
       this.errorMessage = '';
+    }
+  }
+
+  onSubmit(ngForm: NgForm) {
+    console.log(this.contactData);
+    if (ngForm.submitted && ngForm.form.valid) {
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData), this.post.options)
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+            console.info('Email sent successfully');
+          },
+          error: (error) => {
+            console.error('Error sending email', error);
+          },
+        });
     }
   }
 }

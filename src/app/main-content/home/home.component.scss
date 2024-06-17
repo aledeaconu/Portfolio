@@ -1,6 +1,4 @@
-
 section {
-  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,34 +22,34 @@ section {
   width: 150px;
 }
 
-
-
-
 .greeting-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+ // gap: 40px;
   position: relative;
+  width: 35%;
 }
 
 .text-area {
   position: relative;
   text-align: left;
   width: 100%;
+  min-width: 100%;
 }
 
-h1, h2 {
+h1,
+h2 {
   margin-bottom: 10px;
- 
   animation: fadeIn 2s ease-in-out;
 }
-h1{
-  font-family: 'Heartbit';
+
+h1 {
+  font-family: "libre";
 }
 
 .welcome-text {
-  font-size: 56px;
+  font-size: 50px;
   margin-bottom: 56px;
   font-weight: bold;
   animation: slideInLeft 1.5s ease-in-out;
@@ -62,11 +60,14 @@ h1{
   font-size: 36px;
   color: #17b4b2;
   animation: slideInLeft 1.8s ease-in-out;
+  font-family: 'Libre';
+
   
 }
 
 .role-text {
-  font-size: 28px;
+  font-family: 'Libre';
+  font-size: 18px ;
   font-style: italic;
   animation: slideInLeft 2.1s ease-in-out;
 }
@@ -77,83 +78,110 @@ h1{
   align-items: center;
   justify-content: center;
   margin-top: -86px;
-  
+
   .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: upright;
     font-size: 14px;
-  
     position: absolute;
     left: -50px;
-    
     animation: slideInRight 2.4s ease-in-out;
   }
 }
 
-
-
 .personal-pic-area {
-  width: 70%;
+  width: 100%;
   position: relative;
   z-index: 9;
+
   img {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
+    width: 500px;
+    height: 500px;
+    border-radius: 33%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
     animation: zoomIn 2.5s ease-in-out;
-    &:hover{
+    filter: brightness(1.3);
+
+    &:hover {
       transform: scale(1.1);
     }
   }
 }
-
 
 .buttons-section {
   display: flex;
   gap: 76px;
   margin-top: 85px;
   animation: fadeIn 3s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn {
-  background-color: rgba(23, 180, 178, 0.8);
-  border: none;
-  border-radius: 25px;
-  padding: 15px 30px;
-  font-size: 18px;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
-  &:hover{
-    
-      background-color: rgba(23, 180, 178, 1);
-      transform: scale(1.05);
-    
+.separator {
+  opacity: 0.2;
+  position: absolute;
+  top: 75%;
+  left: 3%;
+  z-index: -1;
+  width: 40vw;
+  
+  
+}
+
+/* Responsive Styles */
+@media (max-width: 1300px) {
+  .separator {
+    width: 55vw;
   }
 }
-
-
-
 
 @media (max-width: 1000px) {
   .greeting-section {
     flex-direction: column;
+    width: 58%;
+    img{
+      width: 300px;
+      height: 300px;
+    }
+  }
+  .separator {
+    width: 60vw;
+  }
+ 
+}
+
+@media (max-width: 650px) {
+  section{
+    min-height: 100vh;
+  }
+  .welcome-text {
+    font-size: px;
   }
 
-  .vertical-text {
-    writing-mode: horizontal-tb;
-    direction: ltr;
-    left: auto;
-    top: auto;
-    margin-bottom: 10px;
-    animation: none;
+  .name-text {
+    font-size: 26px;
+  }
+  
+
+  .role-text {
+    font-size: 12px;
   }
 
+  .vertical-container .vertical-text {
+    display: none;
+  }
+
+  
   .buttons-section {
     flex-direction: column;
+    margin-top: 20px;
     gap: 10px;
+  }
+
+  .separator {
+    top: 85%;
+    width: 80vw;
   }
 }

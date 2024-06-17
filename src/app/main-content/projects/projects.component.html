@@ -1,5 +1,5 @@
-<section id="projects" >
-  <div class="projects-label" >
+<section id="projects">
+  <div class="projects-label">
     <div class="labels">
       <span class="labels-span"> Projects</span>
       <div class="line"></div>
@@ -9,42 +9,37 @@
     </div>
   </div>
 
-  <div class="porjects-area">
-    <div class="project">
-      <img src="../../../assets/img/pollo_locco.png" />
+  <div class="projects-content">
+    <div class="projects-area">
+      <div class="project" *ngFor="let project of projects; let i = index"
+        [ngClass]="{'left': i % 2 === 0, 'right': i % 2 !== 0}" [attr.data-index]="i">
+        <a [href]="project.url" target="_blank" (click)="navigateToLink($event, project.url)">
 
-      <div class="project-description" >
-        <h1>Pollo Loco</h1>
-        <span>JavaScript | HTML | CSS</span>
-        <p>
-          Jump, run and throw game based on object-oriented approach. Help Pepe
-          to find coins and tabasco salsa to fight against the crazy hen.
-        </p>
+       
+        <video [ngClass]="{'move': project.isDragged, 'video': true, 'small-video': i === 1}"
+          #video
+          class="video"
+          [id]="'video_' + i"
+          [src]="project.src"
+        ></video>
+      </a>
+        <div class="project-description" [ngClass]="{'show': project.isDragged}">
+          <h1>{{ project.title }}</h1>
+          <span>{{ project.tech }}</span>
+        
+          <p class="full-description" [ngClass]="{'show': project.isDragged}">
+            <span *ngIf="i === 1 && isSmallScreen">{{ project.shortDescription }}</span>
+            <span *ngIf="!(i === 1 && isSmallScreen)">{{ project.description }}</span>
+          </p>
+          <div class="drag-description" (click)="dragDescription(i)" ontouchstart="dragDescription(i)">
+            <span>expand description</span>
+            <hr />
+            <div class="description-circle" [ngClass]="{'move': project.isDragged}"></div>
+          </div>
+        </div>
+     
       </div>
-    </div>
-
-    <div class="project">
-      <div class="project-description">
-        <h1>Ring Of Fire</h1>
-        <span>Angular | Typescript | Firebase</span>
-        <p>
-          Dive into this exciting multiplayer drinking game. Draw a card and
-          follow the fun instructions to keep the party going.
-        </p>
-      </div>
-      <img src="../../../assets/img/ring_of_fire.png" />
-    </div>
-
-    <div class="project">
-      <img src="../../../assets/img/join.png" />
-      <div class="project-description">
-        <h1>Join</h1>
-        <span>JavaScript | HTML | CSS</span>
-        <p>
-          Task manager inspired by the Kanban System. Create and organize tasks
-          using drag and drop functions, assign users and categories.
-        </p>
-      </div>
+    
     </div>
   </div>
 </section>

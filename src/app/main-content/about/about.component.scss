@@ -9,20 +9,6 @@ section {
   padding-top: 20px;
 }
 
-.about-me-label {
-  font-size: 50px;
-  margin-bottom: 20px;
-  position: relative;
-  width: 100%;
-  display: flex;
-  align-items: center;
-
-  span {
-    flex-shrink: 0;
-    padding-right: 20px;
-  }
-}
-
 .personal-infos {
   font-size: 22px;
   display: flex;
@@ -34,69 +20,49 @@ section {
   position: relative;
   left: 23%;
   text-align: justify;
-  align-items: center;
+
   p {
     margin-top: 25px;
-  }
-  @media (max-width: 1000px) {
-    width: 72%;
-    left: 50px;
-    font-size: 18px;
-   
   }
 }
 
 .cv-container {
   width: 200px;
   height: auto;
-  //transition: all 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   opacity: 0.3;
-  padding-top: 48px;
-  animation: slideInRight 2s ease-in-out;
+  padding-top: 58px;
+  animation: float 5s ease-in-out;
   padding: 20px;
+
   img {
     width: 100%;
     height: auto;
     cursor: pointer;
-   
-    &:hover {
-      animation: float 2s ease-in-out infinite;
-    }
-    @media (max-width: 1000px) {
-      width: 150px;
-    }
-  }
 
-  @media (max-width: 1000px) {
-    padding-left: 140px;
+ 
   }
+     &:hover {
+      transform: scale(1.05);
+      opacity: 1;
+    }
 }
+
 .skills {
-  
   position: relative;
   width: 100%;
   margin-bottom: 20px;
-  margin-top: -325px;
+  margin-top: -368px;
   display: flex;
-  align-items: normal;
   flex-direction: column;
   z-index: -1;
-  margin-top: -368px;
-
-  
 
   span {
     padding-left: 2vw;
     flex-shrink: 0;
     text-transform: uppercase;
   }
-
-  @media (max-width: 1000px) {
-        align-items: start;
-        margin-top: -210px;
-        margin-left: 91px;
-   }
 }
 
 .skills-icons {
@@ -116,14 +82,7 @@ section {
   img {
     width: 50px;
     margin-bottom: 6px;
-    @media (max-width: 1000px) {
-      width: 29px;
-    }
   }
-@media (max-width: 750px) {
-  margin-top: 14px;
-}
- 
 }
 
 .skills-icons div:nth-child(1),
@@ -132,6 +91,7 @@ section {
 .skills-icons div:nth-child(4) {
   grid-row: 5;
 }
+
 .skills-icons div:nth-child(5),
 .skills-icons div:nth-child(6),
 .skills-icons div:nth-child(7) {
@@ -142,12 +102,44 @@ section {
 .skills-icons div:nth-child(9) {
   grid-row: 3;
 }
+
 .skills-icons div:nth-child(10),
 .skills-icons div:nth-child(11) {
   grid-row: 2;
 }
+
 .skills-icons div:nth-child(12) {
   grid-row: 1;
 }
 
+/* Responsive Styles */
+@media (max-width: 1400px) {
+  .personal-infos {
+    width: 72%;
+    left: 50px;
+    font-size: 18px;
+  }
 
+  .cv-container {
+    padding-left: 140px;
+
+    img {
+      width: 120px;
+    }
+  }
+
+  .skills {
+    align-items: start;
+    margin-top: -150px;
+  }
+
+  .skills-icons img {
+    width: 29px;
+  }
+}
+
+@media (max-width: 750px) {
+  .skills-icons {
+    margin-top: 14px;
+  }
+}

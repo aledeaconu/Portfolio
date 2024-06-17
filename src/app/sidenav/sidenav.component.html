@@ -1,1 +1,40 @@
-<p>sidenav works!</p>
+<header>
+    <div class="hide-desktop mobile-menu" [ngClass]="{ open: isMenuOpen }">
+      <a href="#" (click)="toggleMenu($event)">
+        <span class="_shape"></span>
+        <span class="_shape"></span>
+      </a>
+    </div>
+  
+    <div class="mobile-navigation" [ngClass]="{ open: isMenuOpen, 'd-none': !isMenuOpen }">
+      <a href="#" (click)="toggleMenu($event)">
+        <button>X</button>
+      </a>
+  
+      <div class="menu">
+        <ul>
+          <li>
+            <a [class.selected]="selectedAnchor === 'home'" (click)="scrollToAnchor('home')" data-index="01.">// home</a>
+          </li>
+          <li>
+            <a [class.selected]="selectedAnchor === 'about'" (click)="scrollToAnchor('about')" data-index="02.">// about</a>
+          </li>
+          <li>
+            <a [class.selected]="selectedAnchor === 'projects'" (click)="scrollToAnchor('projects')" data-index="03.">// projects</a>
+          </li>
+          <li>
+            <a [class.selected]="selectedAnchor === 'contact'" (click)="scrollToAnchor('contact')" data-index="04.">// contact</a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="copyright">
+        &copy; 2024. Made with <br> passion by
+        <a href="#" target="_blank">Alexandra Deaconu</a>. <br />
+        All rights reserved.
+      </div>
+    </div>
+  </header>
+  
+  <div class="background-overlay" (click)="toggleMenu($event)" [ngClass]="{ show: isMenuOpen }"></div>
+  

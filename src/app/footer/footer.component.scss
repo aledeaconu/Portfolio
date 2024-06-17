@@ -45,7 +45,15 @@
         color: #17b4be;
       }
     }
-  
+
+    .legal-notice{
+      margin-top: 38px;
+    }
     
   }
-  
+   
+  @media (max-width: 650px) {
+    .footer-center, .footer-right{
+      display: none;
+    }
+  }

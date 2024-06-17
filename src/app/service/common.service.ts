@@ -14,7 +14,7 @@ export class CommonService {
     const element = document.getElementById(anchor);
   
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       this.selectedAnchor = anchor;
     }
   }
