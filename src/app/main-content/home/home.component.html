@@ -1,20 +1,37 @@
 <section id="home">
-  <div class="background-shapes" >
-    <img src="./assets/img/code-shape.png" class="shape shape1" alt="shape">
-   
-    <img src="./assets/img/code-shape.png" class="shape shape2" alt="shape">
+  <div class="background-shapes">
+    <img src="assets/img/code-shape.png" class="shape shape1" alt="shape" />
+    <img src="assets/img/code-shape.png" class="shape shape2" alt="shape" />
   </div>
-  <div class="greeting-section" >
+  <div class="greeting-section">
     <div class="text-area">
       <h1 class="welcome-text">Hello World</h1>
-      <span class="name-text">I'm Alexandra</span>
-      <h2 class="role-text">Creative Frontend Developer</h2>
-      <div class="vertical-container">
-        <span class="vertical-text">Innovator</span>
+      <span class="name-text" style="color: white">I'm </span>
+      <span class="name-text">Alexandra</span>
+
+      <div class="cycling-letters-container">
+        <div class="cycling-letter-container">
+          <div class="role-text-container">
+            <span class="role-text"> Frontend Developer</span>
+          </div>
+          <ng-container *ngFor="let word of cyclingLetters; let i = index">
+            <span class="cycling-letter"
+                  *ngIf="currentLetterNumber === i"
+                  [class.active]="currentLetterNumber === i">
+              {{ word }}
+            </span>
+          </ng-container>
+
+        
+        </div>
+      
+       
       </div>
+      
+      
     </div>
     <div class="personal-pic-area">
-      <img class="personal-pic" src="./assets/img/file.png"  />
+      <img class="personal-pic" src="assets/img/file.png" />
     </div>
   </div>
 
@@ -22,6 +39,5 @@
     <button class="btn" (click)="scrollToAnchor('about')">Learn More</button>
     <button class="btn" (click)="scrollToAnchor('projects')">My Work</button>
   </div>
-  <img class="separator" src="../../../assets/img/html code.png" />
-
+  <img class="separator" src="assets/img/html code.png" />
 </section>

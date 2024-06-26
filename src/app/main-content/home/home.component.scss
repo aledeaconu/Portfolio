@@ -26,9 +26,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
- // gap: 40px;
   position: relative;
   width: 35%;
+  margin-bottom: 50px;
 }
 
 .text-area {
@@ -36,21 +36,18 @@ section {
   text-align: left;
   width: 100%;
   min-width: 100%;
+  
 }
 
-h1,
-h2 {
+h1{
   margin-bottom: 10px;
   animation: fadeIn 2s ease-in-out;
-}
-
-h1 {
   font-family: "libre";
 }
 
 .welcome-text {
   font-size: 50px;
-  margin-bottom: 56px;
+  margin-bottom: 30px;
   font-weight: bold;
   animation: slideInLeft 1.5s ease-in-out;
 }
@@ -59,33 +56,38 @@ h1 {
   position: relative;
   font-size: 36px;
   color: #17b4b2;
-  animation: slideInLeft 1.8s ease-in-out;
-  font-family: 'Libre';
-
-  
+ // animation: slideInLeft 1.8s ease-in-out;
+  font-family: "Libre";
 }
 
-.role-text {
-  font-family: 'Libre';
-  font-size: 18px ;
-  font-style: italic;
-  animation: slideInLeft 2.1s ease-in-out;
-}
-
-.vertical-container {
-  position: relative;
+.cycling-letters-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin-top: -86px;
+  
 
-  .vertical-text {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    font-size: 14px;
-    position: absolute;
-    left: -50px;
-    animation: slideInRight 2.4s ease-in-out;
+  .cycling-letter {
+    font-size: 12px;
+    font-weight: bold;
+    
+    text-shadow: 1px 1px 2px #17b4b2;
+ 
+
+    &.active {
+      opacity: 0.8;
+    }
+  
+  }
+  
+  .role-text-container {
+    
+    .role-text {
+      color: #17b4b2;
+      font-family: "Libre";
+      font-size: 18px;
+      text-transform: uppercase;
+      
+     
+    }
   }
 }
 
@@ -118,7 +120,6 @@ h1 {
   justify-content: center;
 }
 
-
 .separator {
   opacity: 0.2;
   position: absolute;
@@ -126,8 +127,6 @@ h1 {
   left: 3%;
   z-index: -1;
   width: 40vw;
-  
-  
 }
 
 /* Responsive Styles */
@@ -141,39 +140,38 @@ h1 {
   .greeting-section {
     flex-direction: column;
     width: 58%;
-    img{
+    margin-top: 60px;
+    margin-bottom: 10px;
+
+    img {
       width: 300px;
       height: 300px;
+      margin-top: 25px;
     }
   }
+
   .separator {
     width: 60vw;
   }
- 
 }
 
 @media (max-width: 650px) {
-  section{
+  section {
     min-height: 100vh;
   }
+
   .welcome-text {
-    font-size: px;
+    font-size: 29px;
   }
 
   .name-text {
     font-size: 26px;
   }
-  
 
   .role-text {
     font-size: 12px;
   }
 
-  .vertical-container .vertical-text {
-    display: none;
-  }
-
-  
   .buttons-section {
     flex-direction: column;
     margin-top: 20px;

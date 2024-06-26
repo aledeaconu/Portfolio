@@ -34,7 +34,7 @@ section {
       border-radius: 25px;
       width: 20vw;
       min-height: 50vh;
-      margin-top: 45px;
+      margin-top: 24px;
       padding: 20px;
 
       .btn {
@@ -51,9 +51,6 @@ section {
         width: 100%;
         justify-content: space-between;
         gap: 16px;
-      }
-      input, [type=email]{
-       //background-color: red;
       }
     }
 
@@ -209,6 +206,7 @@ section {
 @media (max-width: 1300px) {
   .contact-options {
     flex-direction: column;
+    gap: 55px !important;
 
     .contact-form {
       width: 40vw !important;
@@ -266,7 +264,7 @@ section {
 
   .contact-options {
     flex-direction: column;
-    gap: 55px !important;
+  
 
     .contact-form {
       width: 80vw !important;

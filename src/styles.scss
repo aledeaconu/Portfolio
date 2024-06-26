@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  background-color: rgb(0, 0, 0);
+  background-color: black;
   margin: 0;
   font-family: 'Libre';
   color: white;
@@ -13,19 +13,19 @@ body {
 /* Font Faces */
 @font-face {
   font-family: "Heartbit";
-  src: url(./assets/fonts/Heartbit-Bold.otf);
+  src: url(/portfolio/browser/assets/fonts/Heartbit-Bold.otf);
 }
 @font-face {
   font-family: 'Playfair';
-  src: url(./assets/fonts/PlayfairDisplay-SemiBold.ttf);
+  src: url(/portfolio/browser/assets/fonts/PlayfairDisplay-SemiBold.ttf);
 }
 @font-face {
   font-family: 'Libre';
-  src: url(./assets/fonts/LibreBaskerville-Regular.ttf);
+  src: url(/portfolio/browser/assets/fonts/LibreBaskerville-Regular.ttf);
 }
 @font-face {
   font-family: 'Patra';
-  src: url(./assets/fonts/Prata-Regular.ttf);
+  src: url(/portfolio/browser/assets/fonts/Prata-Regular.ttf);
 }
 
 /* General Styles */
@@ -39,11 +39,11 @@ p {
   height: 50px;
   border: none;
   border-radius: 25px;
-  background: linear-gradient(to right, #4b4734, #00d9ff);
+  background: linear-gradient(to right, #386b70, #17b4b2);
   color: white;
   outline: none;
   transition: all 0.3s ease;
-  margin-top: 70px;
+  margin-top: 20px;
 
   &:hover {
     transform: scale(1.1);
@@ -154,7 +154,7 @@ p {
 }
 
 /* Responsive Styles */
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
   p {
     font-size: 16px;
   }
@@ -165,7 +165,7 @@ p {
 
   .label-left {
     font-size: 30px;
-    width: 40%;
+    width: 30% !important;
   }
 
   .projects-label,
@@ -185,5 +185,12 @@ p {
 @media (min-width: 650px) {
   .hide-desktop {
     display: none !important;
+  }
+ 
+}
+
+@media (min-width: 400px) {
+  .label-left{
+   
   }
 }

@@ -54,18 +54,19 @@ section {
   position: relative;
 
   &.right {
-    right: 27%;
+    right: 20%;
   }
   a {
     position: relative;
     z-index: 1;
     width: 40%;
-
     height: auto;
   }
 
   .video {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
     border-radius: 3%;
@@ -84,6 +85,7 @@ section {
   }
   #video_1 {
     width: 10vw;
+    padding-left: 275px;
   }
   .project-description {
     border: 1px solid #555;
@@ -99,6 +101,7 @@ section {
     opacity: 0.5;
     transition: opacity 0.5s ease;
     text-align: left;
+    margin-left: 48px;
 
     h1 {
       color: #17b4b2;
@@ -115,6 +118,12 @@ section {
     opacity: 1;
   }
 
+  .live-test-btn {
+    width: 100px;
+    position: relative;
+    z-index: 9;
+  }
+
   .drag-description {
     display: flex;
     align-items: center;
@@ -122,6 +131,7 @@ section {
     position: absolute;
     bottom: 0px;
     right: -59px;
+    width: 100%;
     cursor: pointer;
     &:hover {
       filter: brightness(1.6);
@@ -155,6 +165,7 @@ section {
       }
     }
   }
+ 
 
   .full-description {
     max-height: 50%;
@@ -182,12 +193,82 @@ section {
   }
 }
 
-/* Responsive Styles */
-@media (max-width: 1450px) {
-  .projects-area{
-    width: 100%;
+.git-text {
+  position: absolute;
+  width: 100%;
+  left: 107%;
+  font-size: 16px;
+
+  .git-btn {
+    display: none;
+    text-decoration: none;
+    color: white;
+    
+    &:hover {
+      opacity: 1;
+      color: #17b4b2;
+      font-weight: 500;
+    }
+
+    &.show {
+      display: block;
+ opacity: 0.5;
+    }
   }
-  
+}
+
+/* Responsive Styles */
+@media (max-width: 2300px) {
+  .project{
+    #video_1{
+      padding-left: 281px;
+    }
+  }
+ 
+}
+
+@media (max-width: 1966px) {
+  .project{
+    #video_1{
+      padding-left: 205px;
+    }
+  }
+}
+
+@media (max-width: 1750px) {
+  .project{
+    margin-bottom: 46px;
+    width: 100%;
+    #video_1{
+      padding-left: 263px;
+    }
+   
+  }
+}
+@media (max-width: 1600px) {
+  .live-test-btn{
+    height: 37px !important;
+    margin-top: 0 !important;
+
+  }
+    
+  #video_0.move,
+  #video_2.move {
+    transform: translateX(-60%) ;
+ 
+  }
+}
+
+@media (max-width: 1500px) {
+  .project{
+    .project-description{
+      width: 50%;
+    }
+  }
+
+  #video_1{
+    padding-left: 55px !important;
+  }
 }
 @media (max-width: 1200px) {
   .projects-label {
@@ -195,7 +276,7 @@ section {
     margin-right: 20px;
     margin-bottom: 100px;
   }
-  .projects-area{
+  .projects-area {
     width: 70%;
   }
 
@@ -215,6 +296,9 @@ section {
       gap: 20px;
       .project-description {
         margin-bottom: 0;
+        gap: 3px;
+      width: 73%;
+      padding: 9px;
       }
       .drag-description {
         display: none;
@@ -224,6 +308,7 @@ section {
     #video_1 {
       width: 26vw;
       margin-bottom: 26%;
+      padding-left: 0px;
     }
     #video_0.move,
     #video_2.move {
@@ -233,10 +318,11 @@ section {
     }
 
     .project-description {
-      width: 80%;
+      width: 65%;
       position: static;
-      margin-top: -100px;
+      margin-top: -96px;
       margin-bottom: 100px;
+      margin-left: 0;
 
       h1 {
         margin-bottom: 0;
@@ -255,7 +341,14 @@ section {
         font-size: 16px;
       }
     }
+
+    .git-text{
+      top: 74%;
+      left: 0;
+    }
+    
   }
+
 }
 
 @media (max-width: 650px) {
@@ -272,17 +365,32 @@ section {
       height: auto !important;
     }
   }
-  .project-description {
-    h1 {
-      font-size: 16px;
-      margin-bottom: -16px !important;
-    }
-    span {
-      font-size: 12px !important;
+  .project{
+    .project-description {
+      
+  
+      h1 {
+        font-size: 16px;
+        margin-bottom: -16px !important;
+      }
+      span {
+        font-size: 12px !important;
+      }
     }
   }
+ 
 
   .full-description {
     display: block;
   }
+}
+ 
+@media (max-width: 430px) {
+  
+  #video_0.move,
+  #video_2.move {
+    transform: translateY(-13vh) ;
+ 
+  }
+ 
 }

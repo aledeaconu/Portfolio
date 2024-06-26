@@ -12,7 +12,9 @@ export class IconComponent implements OnInit {
   ngOnInit(): void {
     this.generateLeftValues();
   }
-
+/*
+* method to generate random left position for the icons 
+*/
   generateLeftValues(): void {
     const min = 20;
     const max = 80;

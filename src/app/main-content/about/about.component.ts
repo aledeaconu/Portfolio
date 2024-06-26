@@ -3,13 +3,15 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrl: './about.component.scss',
 })
 export class AboutComponent {
- cvOpened = false
-  toggleCV(){
-    this.cvOpened = true
-    console.log(this.cvOpened ? 'cvOpened' : 'cvClosed')
+  cvOpened = false;
 
+  /**
+   * toggle the CV's visibility
+   */
+  toggleCV() {
+    this.cvOpened = true;
   }
 }

@@ -81,7 +81,8 @@ header {
           font-size: 16px;
 
           &:hover {
-            color: rgb(131, 203, 255);
+            color: #0F94A2;
+            transition: all 0.2s ease-in-out;
             font-weight: 300;
           }
 
