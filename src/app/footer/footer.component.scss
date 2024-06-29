@@ -46,12 +46,25 @@
       }
     }
 
+    .socials-icons{
+      display: none;
+      img{
+        width: 40px;
+        height: 40px;
+      }
+    }
+
     .legal-notice{
       margin-top: 38px;
     }
     
   }
    
+  @media (max-width: 900px) {
+    .socials-icons{
+      display: block !important;
+    }
+  }
   @media (max-width: 650px) {
     .footer-center, .footer-right{
       display: none;

@@ -14,8 +14,12 @@
       <div
         class="project"
         *ngFor="let project of projects; let i = index"
-        [ngClass]="{ left: i % 2 === 0, right: i % 2 !== 0 }"
+        [ngClass]="{
+          left: i % 2 === 0,
+          right: i % 2 !== 0  
+        }"
         [attr.data-index]="i"
+       
       >
         <a
           [href]="project.url"
@@ -55,27 +59,31 @@
             }}</span>
           </p>
           <a [href]="project.url" target="_blank">
-            <button  class="btn live-test-btn">Live test</button>
+            <button class="btn live-test-btn">Live test</button>
           </a>
-          
+
           <div
             class="drag-description"
             (click)="dragDescription(i)"
             ontouchstart="dragDescription(i)"
           >
-            <span *ngIf="!project.isDragged" >expand description</span>
+            <span *ngIf="!project.isDragged">expand description</span>
+
             <hr />
             <div
               class="description-circle"
               [ngClass]="{ move: project.isDragged }"
             ></div>
-            <div class="git-text">
-              <a href="#" class="git-btn" [ngClass]="{show: project.gitHubShow}">Github code</a>
-
-            </div>
-           
           </div>
-         
+          <div class="git-text">
+            <a
+              target="_blank"
+              [href]="project.gitLink"
+              class="git-btn"
+              [ngClass]="{ show: project.gitHubShow }"
+              >Github code</a
+            >
+          </div>
         </div>
       </div>
     </div>

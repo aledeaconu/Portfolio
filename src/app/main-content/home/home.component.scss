@@ -56,7 +56,6 @@ h1{
   position: relative;
   font-size: 36px;
   color: #17b4b2;
- // animation: slideInLeft 1.8s ease-in-out;
   font-family: "Libre";
 }
 
@@ -68,7 +67,6 @@ h1{
   .cycling-letter {
     font-size: 12px;
     font-weight: bold;
-    
     text-shadow: 1px 1px 2px #17b4b2;
  
 
@@ -92,18 +90,18 @@ h1{
 }
 
 .personal-pic-area {
-  width: 100%;
+//width: 100%;
   position: relative;
   z-index: 9;
 
   img {
-    width: 500px;
-    height: 500px;
+    width: 300px;
+    height: 300px;
     border-radius: 33%;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
     animation: zoomIn 2.5s ease-in-out;
-    filter: brightness(1.3);
+    
 
     &:hover {
       transform: scale(1.1);
@@ -144,8 +142,8 @@ h1{
     margin-bottom: 10px;
 
     img {
-      width: 300px;
-      height: 300px;
+      width: 200px;
+      height: 200px;
       margin-top: 25px;
     }
   }

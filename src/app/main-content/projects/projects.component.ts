@@ -23,7 +23,8 @@ export class ProjectsComponent {
       src: 'assets/video/pollo_loco.mp4',
       isDragged: false,
       url: 'http://alexandra-deaconu.com/Pollo_Locco/index.html',
-      gitHubShow: false
+      gitHubShow: false,
+      gitLink: 'https://github.com/aledeaconu/Pollo-Loco'
     },
     {
       title: 'Ring Of Fire',
@@ -34,7 +35,8 @@ export class ProjectsComponent {
       src: 'assets/video/ring-of-fire.mp4',
       isDragged: false,
       url: 'https://ring-of-fire-22138.web.app/',
-      gitHubShow: false
+      gitHubShow: false,
+      gitLink: 'https://github.com/aledeaconu/Ring-Of-Fire'
     },
     {
       title: 'Join',
@@ -44,14 +46,21 @@ export class ProjectsComponent {
       src: 'assets/video/join.mp4',
       isDragged: false,
       url: 'http://alexandra-deaconu.com/Join-main/index.html',
-      gitHubShow: false
+      gitHubShow: false,
+      gitLink: 'https://github.com/bwfront/Join'
     },
   ];
 
   isSmallScreen: boolean = false;
- 
+ openedProjectIndex: number | null = null;
   
-
+toggleProjectDescription(index: number){
+  if(this.openedProjectIndex === index){
+    this.openedProjectIndex = null;
+  } else {
+    this.openedProjectIndex = index
+  }
+}
 
 
 

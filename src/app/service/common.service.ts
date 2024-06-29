@@ -12,8 +12,8 @@ export class CommonService {
   } = {
     home: { desktop: 0, tablet: 0, mobile: 0 },
     about: { desktop: -50, tablet: -20, mobile: 0 },
-    projects: { desktop: -50, tablet: -80, mobile: 30 },
-    contact: { desktop: 22, tablet: -30, mobile: 0 },
+    projects: { desktop: -50, tablet: -40, mobile: 0 },
+    contact: { desktop: -10, tablet: -40, mobile: 0 },
   };
 
   /**

@@ -8,7 +8,7 @@ import { NgZone } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  cyclingLetters: string[] = ['CREATIVE', 'INNOVATIVE', 'EXPERIMENTAL'];
+  cyclingLetters: string[] = ['CREATIVE', 'INNOVATIVE', 'EXPERIMENTAL', 'HUMBLE'];
   currentLetterNumber: number = 0;
   private intervalId: any;
 
