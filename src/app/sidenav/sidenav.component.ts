@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../service/common.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -11,14 +12,18 @@ export class SidenavComponent {
    * inject the CommonService into the component
    * @param commonService - the common service
    */
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService, private router: Router) {}
 
   /**
    * scroll to a specific anchor within the page using CommonService
    * @param anchor - the ID of the anchor element to scroll to
    */
   scrollToAnchor(anchor: string) {
-    this.commonService.scrollToAnchor(anchor);
+    this.router.navigate(['/'], {fragment: anchor}).then(() => {
+      this.commonService.scrollToAnchor(anchor);
+      this.isMenuOpen = false
+    })
+   
   }
 
   /**

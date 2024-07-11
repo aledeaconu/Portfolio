@@ -2,9 +2,9 @@ section {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100%;
-  min-height: 100vh;
+
   position: relative;
   padding-top: 20px;
 }
@@ -19,13 +19,14 @@ section {
 .projects-label {
   font-size: 22px;
   display: flex;
-  flex-direction: column;
-  margin-top: 40px;
   align-items: flex-start;
-  width: 34%;
+  justify-content: center;
+  flex-direction: column;
+  width: 38%;
   left: 0%;
   position: relative;
   margin-right: 120px;
+  margin-top: 40px;
 }
 
 .projects-message {
@@ -33,6 +34,7 @@ section {
   font-size: 24px;
   color: #555;
   text-align: center;
+  margin-bottom: 1vw;
 }
 
 .projects-area {
@@ -76,12 +78,14 @@ section {
       transform: scale(1.05);
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
+  }
+  #video_0.move,
+  #video_2.move {
+    transform: translateX(calc(-20vh - 10vw));
+  }
 
-    &.move {
-      transform: translateX(-55%);
-      transition: transform 0.5s ease;
-      opacity: 1;
-    }
+  #video_1.move {
+    transform: translateX(calc(-15vh - 5vw));
   }
   #video_1 {
     width: 10vw;
@@ -91,7 +95,7 @@ section {
     border: 1px solid #555;
     border-radius: 25px;
     padding: 20px;
-    width: 34%;
+    width: 24vw;
     right: 10%;
     position: absolute;
     display: flex;
@@ -119,7 +123,9 @@ section {
   }
 
   .live-test-btn {
-    width: 100px;
+    width: auto;
+    padding-left: 1vw;
+    padding-right: 1vw;
     position: relative;
     z-index: 9;
   }
@@ -220,10 +226,99 @@ section {
 }
 
 /* Responsive Styles */
+@media (min-width: 6000px) {
+  section {
+    padding-top: 400px;
+    .project {
+      #video_1{
+        padding-left: 275px;
+      }
+      #video_1.move {
+        transform: translateX(calc(-14vh - 0vw));
+      }
+    }
+  }
+}
+
+@media (min-width: 2500px) {
+  section {
+    justify-content: center;
+  }
+  .projects-area {
+    font-size: 3.5vw;
+    padding: 48px;
+    width: 70%;
+    gap: 2vw;
+  }
+
+  .project {
+    width: 100%;
+    margin-bottom: 2vw;
+
+    #video_0.move,
+    #video_2.move {
+      transform: translateX(calc(-15vh - 8vw));
+    }
+    #video_1.move {
+      transform: translateX(calc(-19vh - 0vw));
+    }
+    a {
+      margin-right: 50%;
+      width: 50%;
+    }
+    .project-description {
+      border-radius: 55px;
+      padding: 1vw;
+      width: 30vw;
+      gap: 1vw;
+      height: 15vw;
+
+      h1 {
+        font-size: 1.5vw;
+      }
+
+      span {
+        font-size: 1vw;
+      }
+    }
+
+    .drag-description {
+      span {
+        font-size: 1vw;
+      }
+
+      hr {
+        width: 75px;
+      }
+
+      .description-circle {
+        height: 1vw;
+        width: 1vw;
+      }
+    }
+
+    .git-text {
+      font-size: 1vw;
+      top: 85%;
+    }
+  }
+}
+
+@media (min-width: 2400px) and (max-width: 2500px) {
+  .project {
+    #video_1 {
+      padding-left: 0px;
+    }
+    #video_0.move,
+    #video_2.move {
+      transform: translateX(calc(-10vh - 8vw));
+    }
+  }
+}
 @media (max-width: 2300px) {
   .project {
     #video_1 {
-      padding-left: 281px;
+      padding-left: 190px;
     }
   }
 }
@@ -252,9 +347,12 @@ section {
   }
 
   #video_0.move,
-  #video_1.move,
   #video_2.move {
-    transform: translateX(-90%);
+    transform: translateX(-30vh);
+  }
+
+  #video_1.move {
+    transform: translateX(-20vh);
   }
 }
 
@@ -266,14 +364,28 @@ section {
     #video_1 {
       padding-left: 55px;
     }
+    #video_0.move,
+    #video_2.move {
+      transform: translateX(-42vh);
+    }
   }
 }
-@media (max-width: 1200px) {
+
+@media (max-width: 1400px) {
+  .project {
+    #video_0.move,
+    #video_2.move {
+      transform: translateX(-46vh);
+    }
+  }
   .projects-label {
-    width: 70%;
+    width: 79%;
     margin-right: 20px;
     margin-bottom: 100px;
   }
+}
+
+@media (max-width: 1200px) {
   .projects-area {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -327,7 +439,7 @@ section {
       object-fit: fill;
     }
     #video_1.move {
-      transform: translateX(-15vh);
+      transform: translateX(-19vh);
     }
     #video_1 {
       width: 26vw;
@@ -374,12 +486,21 @@ section {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .project {
+    #video_1.move {
+      transform: translateX(-15vh);
+    }
+  }
+}
 @media (max-width: 900px) {
   .project {
     #video_0,
     #video_2 {
       height: 160px;
     }
+
     .project-description {
       width: 70%;
     }
@@ -401,18 +522,29 @@ section {
     }
   }
 }
+@media (max-width: 800px) {
+  .project {
+    #video_1.move {
+      transform: translateX(-16vh);
+    }
+  }
+  .projects-label {
+    width: 71%;
+    margin-left: 21%;
+  }
+}
 
 @media (max-width: 650px) {
   section {
     align-items: center;
   }
+
   .projects-area {
     width: 60vw;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     gap: 120px;
   }
   .project {
-    
     .project-description {
       width: 60%;
       margin-top: -118px;
@@ -423,7 +555,7 @@ section {
     }
     #video_0.move,
     #video_2.move {
-      transform: translateY(-15vh);
+      transform: translateY(-12vh);
       height: 100px;
     }
     #video_1 {
@@ -431,7 +563,7 @@ section {
     }
     #video_1.move {
       width: 50px;
-      transform: translateY(-17vh);
+      transform: translateY(-14vh);
       padding-left: 43px;
     }
     &.right {
@@ -450,8 +582,18 @@ section {
     .project-description {
       h1 {
         font-size: 16px;
-        margin-bottom: -16px !important;
+        margin-bottom: -10px;
       }
+
+      &:nth-child(2) {
+        h1 {
+          margin-bottom: 0px;
+        }
+        p {
+          margin-top: 10px;
+        }
+      }
+
       span {
         font-size: 12px !important;
       }
@@ -465,24 +607,43 @@ section {
 
 @media (max-width: 575px) {
   .project {
-    #video_1{
+    #video_1 {
       padding-left: 40px;
       width: 30vw;
     }
-  
   }
- 
 }
-
-@media (max-width: 430px) {
-  .project{
+@media (min-width: 450px) and (max-width: 650px) {
+  .project {
+    #video_1.move {
+      transform: translateY(-17.5vh);
+    }
+  }
+}
+@media (max-width: 450px) {
+  .project {
     #video_0.move,
     #video_2.move {
-      transform: translateY(-16vh);
+      transform: translateY(-15vh);
     }
-    #video_1.move{
-      transform: translateY(-18vh);
+
+    #video_1.move {
+      transform: translateY(-17vh);
     }
   }
+  .projects-label {
+    width: 74%;
+    margin-left: 32%;
+  }
+  #video_1 {
+    margin-bottom: 6%;
+  }
+}
 
+@media (min-width:300px) and (max-width: 380px)  {
+ .project{
+  #video_1.move {
+    transform: translateY(-24vh);
+  }
+ } 
 }

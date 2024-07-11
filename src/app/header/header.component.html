@@ -1,13 +1,17 @@
 <header class="hide-mobile" >
   <nav >
     <div>
-      <img (click)="scrollToAnchor('home')" src="./../../assets/img/[AD].png">
+      <img (click)="scrollToAnchor('home')" src="assets/img/[AD].png">
     </div>
 <ul class="menu">
-  <li><a [class.selected]="selectedAnchor === 'home'" (click)="scrollToAnchor('home')">// home</a></li>
-  <li><a [class.selected]="selectedAnchor === 'about'" (click)="scrollToAnchor('about')">// about</a></li>
-  <li><a [class.selected]="selectedAnchor === 'projects'" (click)="scrollToAnchor('projects')">// projects</a></li>
-  <li><a [class.selected]="selectedAnchor === 'contact'" (click)="scrollToAnchor('contact')">// contact</a></li>
+  <li><a [class.selected]="selectedAnchor === 'home'" (click)="scrollToAnchor('home')">// {{'nav.home' | translate}} </a></li>
+  <li><a [class.selected]="selectedAnchor === 'about'" (click)="scrollToAnchor('about')">// {{'nav.about' | translate}}</a></li>
+  <li><a [class.selected]="selectedAnchor === 'projects'" (click)="scrollToAnchor('projects')">// {{'nav.projects' | translate}}</a></li>
+  <li><a [class.selected]="selectedAnchor === 'contact'" (click)="scrollToAnchor('contact')">// {{'nav.contact' | translate}}</a></li>
 </ul>
   </nav>
+  <button (click)="switchLanguage('en')">EN</button>
+<button (click)="switchLanguage('de')">DE</button>
+<button (click)="switchLanguage('ro')">RO</button>
+
 </header>

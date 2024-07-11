@@ -1,0 +1,67 @@
+{
+    "nav": {
+        "home": "acasă",
+        "about": "despre mine",
+        "projects": "proiecte",
+        "contact": "contact"
+    },
+    "home":{
+        "name_text": "Eu sunt",
+        "role": "Dezvoltatoare Frontend",
+        "cyclingWords_1": "CREATIVĂ",
+        "cyclingWords_2": "INOVATIVĂ",
+        "cyclingWords_3": "PRACTICĂ",
+        "learn_more_button": "Află mai multe",
+        "my_work_button": "Munca mea"
+    },
+    "about_me": {
+        "title": "Despre mine",
+        "text": "Numele meu este Alexandra Deaconu și sunt o dezvoltatoare web front-end pasionată, stabilită în Berlin. Sunt dornică să încep proiecte noi și interesante, mereu încercând să livrez o munca de calitate. Scopul meu este să contribui semnificativ la succesul organizațiilor cu care colaborez, asigurând o creștere și prosperitate reciprocă.",
+        "cta": "Dacă consideri că sunt potrivită pentru proiectele tale, contactează-mă!",
+        "button": "Vezi CV",
+        "skills": "COMPETENȚE"
+   },
+   "projects": {
+    "title": "PROIECTE",
+    "message": "Descopera-mi creațiile",
+    "project_1": "Sari, aleargă și aruncă. Un joc bazat pe programare orientata pe obiecte (object-oriented). Ajută-l pe Pepe să găsească monede și sos tabasco pentru a lupta împotriva găinii ucigașe.",
+    "project_2": "Intră în acest joc palpitant de băut multiplayer. Trage o carte și urmează instrucțiunile distractive pentru a continua petrecerea.",
+    "project_3": "Manager de sarcini inspirat de Sistemul Kanban. Creează și organizează sarcini folosind funcțiile de tragere și plasare, atribuiește utilizatori și categorii.",
+    "button": "extinde descrierea"
+
+
+},
+"contact": {
+    "span": "Sunt aici pentru a te ajuta să rezolvi orice provocări de programare, să-ți transform ideile în realitate sau să ofer suport pentru proiectele deja concepute.",
+    "p": "Completează formularul de mai jos sau trimite-mi un mesaj direct.",
+    "cta": "Aștept cu nerăbdare să colaborăm!",
+    "socials": "Rețelele mele sociale",
+    "form": {
+      "title": "Scrie-mi un mesaj!",
+      "first_name": "Prenume",
+      "last_name": "Nume",
+      "message": "Mesaj",
+      "policy": {
+        "I've read the": "Am citit",
+        "privacy policy":"politica de confidențialitate",
+        "and agree to the processing of my data as outlined.": "și sunt de acord cu prelucrarea datelor mele așa cum este descris."
+    },
+      "button": "Trimite"
+    }
+  },
+  "footer": {
+    "role": "Dezvoltatoare Frontend",
+    "legal_notice": "Politica de confidențialitate",
+    "quick_links": {
+        "title" : "Link-uri rapide",
+       "home": "acasă",
+        "about": "despre mine",
+        "projects": "proiecte",
+        "contact": "contact"
+    },
+    "contact_me": "Contactează-mă",
+    "phone": "Telefon"
+  }
+  
+  
+}

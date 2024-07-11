@@ -1,11 +1,11 @@
 <section id="projects">
   <div class="projects-label">
     <div class="labels">
-      <span class="labels-span"> Projects</span>
+      <span class="labels-span">{{ 'projects.title' | translate }}</span>
       <div class="line"></div>
     </div>
     <div class="projects-message">
-      <p>Browse Through My Creations</p>
+      <p>{{ 'projects.message' | translate }}</p>
     </div>
   </div>
 
@@ -14,24 +14,12 @@
       <div
         class="project"
         *ngFor="let project of projects; let i = index"
-        [ngClass]="{
-          left: i % 2 === 0,
-          right: i % 2 !== 0  
-        }"
+        [ngClass]="{ left: i % 2 === 0, right: i % 2 !== 0 }"
         [attr.data-index]="i"
-       
       >
-        <a
-          [href]="project.url"
-          target="_blank"
-          (click)="navigateToLink($event, project.url)"
-        >
+        <a [href]="project.url" target="_blank" (click)="navigateToLink($event, project.url)">
           <video
-            [ngClass]="{
-              move: project.isDragged,
-              video: true,
-              'small-video': i === 1
-            }"
+            [ngClass]="{ move: project.isDragged, video: true, 'small-video': i === 1 }"
             #video
             class="video"
             [id]="'video_' + i"
@@ -43,46 +31,25 @@
             loop
           ></video>
         </a>
-        <div
-          class="project-description"
-          [ngClass]="{ show: project.isDragged }"
-        >
+        <div class="project-description" [ngClass]="{ show: project.isDragged }">
           <h1>{{ project.title }}</h1>
           <span>{{ project.tech }}</span>
 
           <p class="full-description" [ngClass]="{ show: project.isDragged }">
-            <span *ngIf="i === 1 && isSmallScreen">{{
-              project.shortDescription
-            }}</span>
-            <span *ngIf="!(i === 1 && isSmallScreen)">{{
-              project.description
-            }}</span>
+            <span *ngIf="i === 1 && isSmallScreen">{{ project.shortDescription  }}</span>
+            <span *ngIf="!(i === 1 && isSmallScreen)">{{ project.description | translate}}</span>
           </p>
           <a [href]="project.url" target="_blank">
             <button class="btn live-test-btn">Live test</button>
           </a>
 
-          <div
-            class="drag-description"
-            (click)="dragDescription(i)"
-            ontouchstart="dragDescription(i)"
-          >
-            <span *ngIf="!project.isDragged">expand description</span>
-
+          <div class="drag-description" (click)="dragDescription(i)" (touchstart)="dragDescription(i)">
+            <span *ngIf="!project.isDragged">{{ "projects.button" | translate}}</span>
             <hr />
-            <div
-              class="description-circle"
-              [ngClass]="{ move: project.isDragged }"
-            ></div>
+            <div class="description-circle" [ngClass]="{ move: project.isDragged }"></div>
           </div>
           <div class="git-text">
-            <a
-              target="_blank"
-              [href]="project.gitLink"
-              class="git-btn"
-              [ngClass]="{ show: project.gitHubShow }"
-              >Github code</a
-            >
+            <a [href]="project.gitLink" target="_blank" class="git-btn" [ngClass]="{ show: project.gitHubShow }">Github code</a>
           </div>
         </div>
       </div>

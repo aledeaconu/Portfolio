@@ -1,24 +1,22 @@
 <section id="about">
   <div class="personal-infos">
     <div class="labels">
-      <span class="labels-span"> About me </span>
+      <span class="labels-span"> {{ "about_me.title" | translate}} </span>
       <div class="line"></div>
     </div>
     <div class="paragraphs">
-    <p>
-      My name is Alexandra Deaconu, and I'm a passionate front-end web developer
-      originally from Romania, now based in Berlin. I am eager to embark on new
-      and exciting projects, always striving to deliver my best work. My goal is
-      to contribute significantly to the success of the organizations I
-      collaborate with, ensuring mutual growth and prosperity.
-    </p>
-    <p>If you think I’d be a good match for your projects, contact me!</p>
-  </div>
+      <p>
+        <span #textAnimation> 
+          {{ "about_me.text" | translate}}
+        </span>
+      </p>
+      <p class="advice-text">{{ "about_me.cta" | translate}}</p>
+    </div>
     <div class="cv-container">
       <div class="cv-section">
         <div class="cv-image">
           <a href="assets/img/Alexandra's-Resume.jpg" target="_blank">
-            <img src="../../../assets/img/cv-icon.png" alt="CV Image" />
+            <img src="assets/img/cv-icon.png" alt="CV Image" />
           </a>
           <div class="cta-container">
             <a
@@ -26,13 +24,10 @@
               target="_blank"
               class="arrow"
             >
-              <span>Open CV</span></a
+              <span>{{ "about_me.button" | translate}}</span></a
             >
-           
           </div>
         </div>
-
-        
       </div>
     </div>
   </div>
@@ -40,12 +35,12 @@
   <div class="skills">
     <div class="label-left">
       <div class="line"></div>
-      <span>Skills</span>
+      <span>{{ "about_me.skills" | translate}}</span>
     </div>
     <div class="skills-icons">
       <div>
         <img src="assets/img/skills-icons/Property 1=Typescript.png" />
-        <p>Typescript</p>
+        <p>Typescript </p>
       </div>
       <div>
         <img src="assets/img/skills-icons/Property 1=Angular.png" />

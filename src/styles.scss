@@ -1,13 +1,56 @@
 html {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
 body {
   background-color: black;
   margin: 0;
-  font-family: 'Libre';
+  font-family: "Libre";
   color: white;
   overflow-x: hidden;
+  scrollbar-width: thin;
+  cursor: none;
+  
+}
+.cursor-dot{
+  width: 5px;
+  height: 5px;
+  background-color: #17b4b2;
+   }
+  .cursor-outline{
+      width: 30px;
+      height: 30px;
+      border: 2px solid white;
+  }
+  .cursor-dot, .cursor-outline{
+    position: fixed;
+    
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 99;
+    pointer-events: none;
+  }
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 100px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #17b4b2;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0f94a2;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #333;
 }
 
 /* Font Faces */
@@ -16,24 +59,24 @@ body {
   src: url(/portfolio/browser/assets/fonts/Heartbit-Bold.otf);
 }
 @font-face {
-  font-family: 'Playfair';
+  font-family: "Playfair";
   src: url(/portfolio/browser/assets/fonts/PlayfairDisplay-SemiBold.ttf);
 }
 @font-face {
-  font-family: 'Libre';
+  font-family: "Libre";
   src: url(/portfolio/browser/assets/fonts/LibreBaskerville-Regular.ttf);
 }
 @font-face {
-  font-family: 'Patra';
+  font-family: "Patra";
   src: url(/portfolio/browser/assets/fonts/Prata-Regular.ttf);
 }
 
 /* General Styles */
 p {
-  font-family: 'Libre';
+  font-family: "Libre";
 }
 .btn {
-  font-family: 'Libre';
+  font-family: "Libre";
   font-size: 16px;
   width: 200px;
   height: 50px;
@@ -47,19 +90,19 @@ p {
 
   &:hover {
     transform: scale(1.1);
-    cursor: pointer;
+    cursor: pointer
   }
 }
 
 /* Labels */
 .labels {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 2vw;
+  margin-bottom: 2vw;
   position: relative;
   width: 100%;
   display: flex;
   align-items: center;
-  font-family: 'Patra';
+  font-family: "Patra";
   text-transform: uppercase;
   letter-spacing: 2px;
 
@@ -70,13 +113,13 @@ p {
 }
 
 .label-left {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 2vw;
+  margin-bottom: 2vw;
   position: relative;
   width: 20%;
   display: flex;
   align-items: center;
-  font-family: 'Patra';
+  font-family: "Patra";
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -102,6 +145,78 @@ p {
   opacity: 0.2;
   animation: float 6s ease-in-out infinite;
   z-index: -1;
+}
+/* Icons */
+
+.icons-container {
+  position: absolute;
+  top: 85%;
+  width: 150%;
+  max-width: 100%;
+  height: 334vh;
+  z-index: -9;
+  overflow: hidden;
+}
+
+.icons {
+  position: absolute;
+  opacity: 0.08;
+
+  &:nth-child(1) {
+    top: 13%;
+    left: 40%;
+  }
+
+  &:nth-child(2) {
+    top: 25%;
+    left: 0%;
+  }
+
+  &:nth-child(3) {
+    top: 40%;
+    left: 70%;
+  }
+
+  &:nth-child(4) {
+    top: 50%;
+    left: 20%;
+  }
+  &:nth-child(5) {
+    top: 65%;
+    left: 0%;
+  }
+  &:nth-child(6) {
+    top: 70%;
+    left: 80%;
+  }
+  &:nth-child(7) {
+    top: 80%;
+    left: 0%;
+  }
+
+  img {
+    width: 30vw;
+    animation: float 2s ease-in-out infinite;
+    object-fit: fill;
+  }
+}
+
+.text-animation{
+  color: hsl(0 0% 100% / 0.2 );
+  background-clip: text;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(90deg, white 20%, #f0f0f0 40%, #17b4be);
+
+  animation: scroll-reveal 3s linear forwards;
+ 
+
+}
+@keyframes scroll-reveal {
+  to { 
+    background-size: 100% 100%;
+    
+  }
 }
 
 /* Animations */
@@ -154,6 +269,18 @@ p {
 }
 
 /* Responsive Styles */
+@media (min-width: 2500px) {
+  .btn {
+    width: 10vw;
+    height: 4vh;
+    border-radius: 50px;
+    font-size: 1vw;
+  }
+  p {
+    font-size: 1vw;
+    line-height: initial;
+  }
+}
 @media (max-width: 1050px) {
   p {
     font-size: 16px;
@@ -165,7 +292,7 @@ p {
 
   .label-left {
     font-size: 30px;
-    width: 30% !important;
+    width: 50% !important;
   }
 
   .projects-label,
@@ -186,11 +313,13 @@ p {
   .hide-desktop {
     display: none !important;
   }
- 
 }
 
 @media (min-width: 400px) {
-  .label-left{
-   
+  html {
+    overflow-x: hidden !important;
+  }
+  .label-left {
+    margin-bottom: 32px;
   }
 }

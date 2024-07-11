@@ -1,0 +1,44 @@
+.main-component {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 50px;
+}
+.cursor-dot {
+  width: 0.4vw;
+  height: 0.8vh;
+  background-color: #17b4b2;
+}
+.cursor-outline {
+  width: 1.5vw;
+  height: 2vh;
+  border: 0.01vw solid white;
+}
+.cursor-dot,
+.cursor-outline {
+  position: fixed;
+  top: -19px;
+  left: -19px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (min-width: 2400px) {
+  .main-component {
+    margin: 0 auto;
+    width: 65%;
+  }
+}
+@media (max-width: 430px) {
+  .main-component {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    display: none ;
+  }
+}

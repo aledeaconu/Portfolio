@@ -2,27 +2,34 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   width: 100%;
-  min-height: 100vh;
   position: relative;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .personal-infos {
-  font-size: 22px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36%;
   flex-direction: column;
-  margin-top: 40px;
+  width: 36%;
+  height: auto;
   position: relative;
   left: 23%;
   text-align: justify;
-
+  
+.paragraphs{
+  font-size: clamp(0.8rem, 1rem + 10vw, 1.5rem);
+}
+.advice-text{
+  color: #17b4be;
+  font-weight: bold;
+  margin-top: 1vw;
+}
   p {
-    margin-top: 25px;
+    margin-top: 10px;
     line-height: 25px;
   }
 }
@@ -42,7 +49,7 @@ section {
     width: 100%;
 
     .cv-image {
-      width: 100px;
+      width: 7vw;
       height: auto;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -55,6 +62,8 @@ section {
         height: auto;
         cursor: pointer;
         opacity: 0.5;
+        
+
         &:hover {
           opacity: 0.8;
         }
@@ -70,7 +79,6 @@ section {
       width: 100%;
       height: 100%;
       margin-top: 23px;
-      
     }
   }
 
@@ -83,8 +91,8 @@ section {
     font-size: 16px;
     color: white;
     text-align: center;
-    width: 80px;
-    height: 43px;
+    width: 6vw;
+    height: 3vh;
     line-height: 60px;
     border: 5px solid #17b4be;
     border-radius: 5px;
@@ -142,6 +150,7 @@ section {
     span {
       display: inline-block;
       transition: opacity 0.3s ease;
+      font-family: 'Playfair';
     }
 
     &:hover span,
@@ -155,10 +164,12 @@ section {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
-  margin-top: -400px;
+  margin-top: -280px;
   display: flex;
   flex-direction: column;
   z-index: -1;
+  padding-left: 50px;
+ 
 
   span {
     padding-left: 2vw;
@@ -170,18 +181,20 @@ section {
 .skills-icons {
   display: grid;
   margin-top: 40px;
-  width: 50%;
+  width: 35%;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  
 
   div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 1vw;
   }
 
   img {
-    width: 50px;
+    width: 3vw;
     margin-bottom: 6px;
   }
 }
@@ -214,37 +227,96 @@ section {
 }
 
 /* Responsive Styles */
+@media (min-width: 4000px) {
+  section{
+    padding-top: 400px;
+  }
+}
+@media (min-width: 2500px) {
+ section{
+  justify-content: center;
+
+ }
+  .personal-infos {
+    p {
+      font-size: 1vw;
+      line-height: initial;
+    }
+    .arrow {
+      width: 238px;
+      height: 74px;
+      font-size: 46px;
+      padding: 3px;
+      border-radius: 30px;
+
+      &:hover,
+      &.auto {
+        width: 138px;
+        border-radius: 40px;
+      }
+
+
+      &::before {
+        height: 0px;
+      }
+
+      &::after {
+        width: 24px;
+        height: 24px;
+      }
+
+      &::before {
+        width: 5px;
+        height: 40px;
+        top: 42%;
+    
+      }
+  
+      &::after {
+        width: 40px;
+        height: 40px;
+        top: 55%;
+      
+      }
+      &:hover::before,
+      &.auto::before {
+        transform: translate(-50%, -12px);
+      }
+    
+    }
+  }
+}
+
 @media (max-width: 1400px) {
+ 
   .personal-infos {
     width: 72%;
     left: 50px;
     font-size: 18px;
   }
- .cv-image{
-  img{
-    width: 88%;
-  }
- }
-     
- .arrow {
-  width: 71px !important;
-  height: 27px !important;
-  &::before {
-    height: 12px !important;
+  .cv-image {
+    img {
+      width: 88%;
+    }
+    .arrow {
+      width: 71px;
+      height: 27px;
+      &::before {
+        height: 12px;
+      }
+
+      &::after {
+        width: 12px;
+        height: 12px;
+      }
+
+      &:hover::after,
+      &.auto::after {
+        transform: translate(-50%, -15px) rotate(45deg);
+      }
+    }
   }
 
-  &::after {
-    width: 12px !important;
-    height: 12px !important;
-  }
-
-  &:hover::after,
-  &.auto::after {
-    transform: translate(-50%, -15px) rotate(45deg) !important;
-  }
-}
-  
-  
   .skills {
     align-items: start;
     margin-top: -120px;
@@ -253,12 +325,34 @@ section {
   .skills-icons img {
     width: 25px;
   }
-
 }
+
 
 
 @media (max-width: 750px) {
   .skills-icons {
     margin-top: 0;
+  }
+  .cv-container {
+    .cv-image {
+      img {
+        width: 90vw;
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .personal-infos{
+    left: 30px;
+    .paragraphs{
+      font-size: 16px;
+    }
+  }
+  .skills{
+    margin-top: -75px;
+    .skills-icons{
+      margin-top: 20px;
+    }
   }
 }

@@ -6,38 +6,34 @@
   <div class="greeting-section">
     <div class="text-area">
       <h1 class="welcome-text">Hello World</h1>
-      <span class="name-text" style="color: white">I'm </span>
+      <span class="name-text" style="color: white">{{ 'home.name_text' | translate}} </span>
       <span class="name-text">Alexandra</span>
 
       <div class="cycling-letters-container">
         <div class="cycling-letter-container">
           <div class="role-text-container">
-            <span class="role-text"> Frontend Developer</span>
+            <span class="role-text"> {{ 'home.role' | translate}}</span>
           </div>
-          <ng-container *ngFor="let word of cyclingLetters; let i = index">
-            <span class="cycling-letter"
-                  *ngIf="currentLetterNumber === i"
-                  [class.active]="currentLetterNumber === i">
-              {{ word }}
+          <ng-container *ngFor="let word of cyclingWords; let i = index">
+            <span
+              class="cycling-letter"
+              *ngIf="currentWordIndex === i"
+              [class.active]="currentWordIndex === i"
+            >
+              {{ 'home.cyclingWords_' + (currentWordIndex + 1)| translate }}
             </span>
           </ng-container>
-
-        
         </div>
-      
-       
       </div>
-      
-      
     </div>
     <div class="personal-pic-area">
-      <img class="personal-pic" src="../../../assets/img/file.png" />
+      <img class="personal-pic" src="assets/img/file.png" />
     </div>
   </div>
 
   <div class="buttons-section">
-    <button class="btn" (click)="scrollToAnchor('about')">Learn More</button>
-    <button class="btn" (click)="scrollToAnchor('projects')">My Work</button>
+    <button class="btn" (click)="scrollToAnchor('about')">{{ 'home.learn_more_button' | translate}}</button>
+    <button class="btn" (click)="scrollToAnchor('projects')">{{ 'home.my_work_button' | translate}}</button>
   </div>
   <img class="separator" src="assets/img/html code.png" />
 </section>

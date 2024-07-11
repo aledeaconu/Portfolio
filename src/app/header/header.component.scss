@@ -5,7 +5,7 @@ header {
   z-index: 999;
   background-color: rgb(0, 0, 0);
   top: 0;
-  font-family: 'playfair';
+  font-family: "playfair";
 
   nav {
     display: flex;
@@ -13,24 +13,19 @@ header {
     justify-content: space-around;
     padding-left: 32px;
     padding-right: 32px;
-   
+
     div {
       display: flex;
       align-items: center;
- 
     }
     img {
-      width: 50px;
-      height: 50px;
+      width: 4vw;
+      height: auto;
       object-fit: cover;
       margin-bottom: 15px;
       margin-top: 15px;
       margin-right: 25px;
       cursor: pointer;
-      @media (max-width: 1000px) {
-        width: 25px;
-      height: 25px;
-      }
     }
 
     ul {
@@ -39,19 +34,19 @@ header {
       justify-content: space-around;
       list-style: none;
       padding: 0;
-      margin-top: 20px;
+      font-size: 20px;
       li {
         margin: 0 15px;
         a {
           position: relative;
           text-decoration: none;
-          color: #17B4BE;
+          color: #17b4be;
           transition: color 0.3s ease;
           font-weight: 500;
           cursor: pointer;
 
           &:hover {
-            color: #0F94A2;
+            color: #0f94a2;
             transition: all 0.2s ease-in-out;
             font-weight: 300;
           }
@@ -61,7 +56,7 @@ header {
             right: -1px;
             top: -12px;
             color: white;
-            font-size: 10px;
+            font-size: 13px;
             opacity: 0.5;
           }
         }
@@ -84,16 +79,26 @@ header {
       }
     }
   }
-
-
 }
-
 
 .menu a:not(.selected) {
-  opacity: 0.5; 
-  transition: opacity 0.3s ease; 
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 .menu a.selected {
-  font-weight: bold; 
+  font-weight: bold;
   opacity: 1;
+}
+
+@media (min-width: 2500px) {
+  ul{
+    font-size: 1.5vw !important;
+    li{
+      a{
+        &::after{
+          font-size: 1vw !important;
+        }
+      }
+    }
+  }
 }

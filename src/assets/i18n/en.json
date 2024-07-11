@@ -1,0 +1,70 @@
+{
+    "nav": {
+        "home": "home",
+        "about": "about",
+        "projects": "projects",
+        "contact": "contact"
+    },
+    "home":{
+        "name_text": "I'm",
+        "role": "Frontend Developer",
+        "cyclingWords_1": "CREATIVE",
+        "cyclingWords_2": "INNOVATIVE",
+        "cyclingWords_3": "EXPERIMENTAL",
+        "learn_more_button": "Learn More",
+        "my_work_button": "My Work"
+
+    },
+    "about_me": {
+         "title": "ABOUT ME",
+         "text": "My name is Alexandra Deaconu and I am a passionate front-end web developer, originally from Romania and now living in Berlin. I look forward to new and exciting projects and always strive to deliver my best work. My goal is to make a significant contribution to the success of the organizations I work with to ensure mutual growth and prosperity.",
+         "cta": "If you think I’d be a good match for your projects, contact me!",
+         "button": "Open CV",
+         "skills": "SKILLS"
+    },
+    
+   "projects": {
+        "title": "PROJECTS",
+        "message": "Browse Through My Creations",
+        "project_1": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
+        "project_2": "Dive into this exciting multiplayer drinking game. Draw a card and follow the fun instructions to keep the party going.",
+        "project_3": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
+        "button": "expand description"
+
+
+   },
+   "contact": {
+    "span": "I'm here to help you solve any programming challenges, turn your ideas into reality or provide support for your projects.",
+    "p": "Fill out the form below or send me a direct message.",
+    "cta" : "I look forward to collaborate with you!",
+    "socials" : "My social media",
+    "form": {
+        "title": "Get in touch!",
+        "first_name" : "First Name",
+        "last_name" : "Last Name",
+        "message" : "Message",
+        "policy": {
+            "I've read the": "I've read the",
+            "privacy policy":"privacy policy",
+            "and agree to the processing of my data as outlined.": "and agree to the processing of my data as outlined."
+
+        } ,
+        "button": "Submit"
+    }
+
+   },
+   "footer": {
+    "role": "Web Developer",
+    "legal_notice": "Legal Notice",
+    "quick_links": {
+        "title" : "Quick Links",
+        "home": "home",
+        "about": "about",
+        "projects": "projects",
+        "contact": "contact"
+    },
+    "contact_me": "Contact Me",
+    "phone": "Phone"
+  }
+  
+ }

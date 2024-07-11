@@ -1,23 +1,21 @@
 <section id="contact">
   <div class="contact-container">
-    
     <div class="label-left">
       <div class="line"></div>
       <span class="labels-span">Contact</span>
     </div>
   </div>
   <div class="contact-content">
-  
     <div class="contact-text">
-      <p>I'm here to help you solve any programming challanges, turn 
-       your ideas into reality, or provide support for your projects.
-    <br>Fill out the form below or send me a direct message.</p>
-    <p>I look forward to collaborate with you!</p>
+      <p>
+        <span #textAnimation>
+         {{ 'contact.span' | translate}} <br /> {{ 'contact.p' | translate}}
+        </span>
+      </p>
+      <p>{{ 'contact.cta' | translate}}</p>
     </div>
     <div class="socials-responsive"></div>
     <div class="contact-options-social">
-
-  
       <div class="socials-area">
         <div class="socials">
           <div class="content">
@@ -27,42 +25,77 @@
             </div>
           </div>
           <div class="content">
-            <h1>My social media</h1>
+            <h1>{{ 'contact.socials' | translate}}</h1>
           </div>
         </div>
         <div class="socials-icons">
-          <a href="https://wa.me/15111786993" target="_blank"><img src="/assets/img/icons/whatsapp-icon.png" /></a>
-          <a href="https://www.instagram.com/aledeaconu/" target="_blank"><img src="/assets/img/icons/instagram-icon.png" /></a>
-          <a href="https://www.linkedin.com/in/alexandra-deaconu/" target="_blank"><img src="/assets/img/icons/linked-in-icon.png" /></a>
-          <a href="https://github.com/aledeaconu" target="_blank"><img src="/assets/img/icons/github-icon.png" /></a>
+          <a href="https://wa.me/15111786993" target="_blank"
+            ><img src="assets/img/icons/whatsapp-icon.png"
+          /></a>
+          <a href="https://www.instagram.com/aledeaconu/" target="_blank"
+            ><img src="assets/img/icons/instagram-icon.png"
+          /></a>
+          <a
+            href="https://www.linkedin.com/in/alexandra-deaconu/"
+            target="_blank"
+            ><img src="assets/img/icons/linked-in-icon.png"
+          /></a>
+          <a href="https://github.com/aledeaconu" target="_blank"
+            ><img src="assets/img/icons/github-icon.png"
+          /></a>
         </div>
       </div>
     </div>
+    
     <div class="contact-options-form">
-    <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
-      <p>Get in touch!</p>
-      <div class="flex">
+      <form class="contact-form" (ngSubmit)="onSubmit()">
+        <p>{{ 'contact.form.title' | translate }}</p>
+        <div class="flex">
+          <mat-form-field>
+            <mat-label>{{ 'contact.form.first_name' | translate }}</mat-label>
+            <input matInput required [formControl]="firstName" />
+           
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>{{ 'contact.form.last_name' | translate }}</mat-label>
+            <input matInput required [formControl]="lastName" />
+           
+          </mat-form-field>
+        </div>
         <mat-form-field>
-          <mat-label>First Name</mat-label>
-          <input matInput required name="firstName" [(ngModel)]="contactData.firstName" />
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" />
+          <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+            <span *ngIf="email.hasError('required')">You must enter a value</span>
+            <span *ngIf="email.hasError('email')">Not a valid email</span>
+          </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <mat-label>Last Name</mat-label>
-          <input matInput required name="lastName" [(ngModel)]="contactData.lastName" />
+          <mat-label>{{ 'contact.form.message' | translate }}</mat-label>
+          <textarea matInput required [formControl]="message"></textarea>
+          
         </mat-form-field>
-      </div>
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="pat@example.com" [formControl]="email" required name="email" [(ngModel)]="contactData.email" />
-        <mat-error *ngIf="email.invalid">{{ errorMessage }}</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Message</mat-label>
-        <textarea matInput required name="message" [(ngModel)]="contactData.message"></textarea>
-      </mat-form-field>
-      <button type="submit" class="btn">Send</button>
-    </form>
+        <mat-checkbox [formControl]="privacyPolicy">
+          <p>
+            {{ "contact.form.policy.I've read the" | translate}}
+            <a [routerLink]="['/legal-notice']">{{"contact.form.policy.privacy policy" | translate}}</a>
+            {{"contact.form.policy.and agree to the processing of my data as outlined." | translate}}
+          </p>
+        </mat-checkbox>
+        <div *ngIf="privacyPolicyError" class="privacy-error">
+          <span>
+            Please check the
+            <a [routerLink]="['/legal-notice']">privacy policy</a> agreement
+          </span>
+          
+        </div>
+        <button
+          type="submit"
+          class="btn"
+        >
+         {{"contact.form.button" | translate}}
+        </button>
+      </form>
+    </div>
   </div>
-  
-</div>
 </section>

@@ -12,5 +12,7 @@ export class LegalNoticeComponent {
 
   goBack() {
     this.router.navigate(["/"]);
+
+    
   }
 }

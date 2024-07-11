@@ -1,0 +1,66 @@
+{
+    "nav": {
+        "home": "Startseite",
+        "about": "Über mich",
+        "projects": "Projekte",
+        "contact": "Kontakt"
+    },
+    "home":{
+        "name_text": "Ich bin",
+        "role": "Frontend-Entwicklerin",
+        "cyclingWords_1": "KREATIVE",
+        "cyclingWords_2": "NEUGIERIG",
+        "cyclingWords_3": "ERFINDERISCHE",
+        "learn_more_button": "Erfahre Mehr",
+        "my_work_button": "Meine Arbeit"
+    },
+    "about_me": {
+         "title": "ÜBER MICH",
+         "text": "Mein Name ist Alexandra Deaconu und ich bin eine leidenschaftliche Frontend-Webentwicklerin, die ursprünglich aus Rumänien stammt und jetzt in Berlin lebt. Ich freue mich auf neue und spannende Projekte und bin immer bestrebt, meine beste Arbeit abzuliefern. Mein Ziel ist es, einen bedeutenden Beitrag zum Erfolg der Organisationen, mit denen ich zusammenarbeite, zu leisten, um das gegenseitige Wachstum und den Wohlstand zu gewährleisten.",
+         "cta": "Wenn Sie glauben, dass ich für Ihre Projekte geeignet bin, kontaktieren Sie mich!",
+         "button": "Lebenslauf",
+         "skills": "FÄHIGKEITEN"
+    },
+    "projects": {
+        "title": "PROJEKTE",
+        "message": "Stöberen Sie durch meine Kreationen",
+        "project_1": "Ein einfaches Jump-and-Run-Spiel, basierend auf einem objektorientierten Ansatz. Helfen Sie Pepe, Münzen und Flaschen zu finden, um gegen das Killerhuhn zu kämpfen.",
+        "project_2": "Tauchen Sie ein in dieses spannende Multiplayer-Trinkspiel. Ziehen Sie eine Karte und folgen Sie den lustigen Anweisungen, um die Party am Laufen zu halten.",
+        "project_3": "Task-Manager inspiriert vom Kanban-System. Erstellen und organisieren Sie Aufgaben mit Drag-and-Drop-Funktionen, weisen Sie Benutzer und Kategorien zu.",
+        "button": "Beschreibung erweitern"
+   },
+   "contact": {
+    "span": "Ich bin hier, um Ihnen zu helfen, alle Programmierherausforderungen zu lösen, Ihre Ideen in die Realität umzusetzen oder Unterstützung für Ihre Projekte zu bieten.",
+    "p": "Füllen Sie das untenstehende Formular aus oder senden Sie mir eine direkte Nachricht.",
+    "cta" : "Ich freue mich auf die Zusammenarbeit mit Ihnen",
+    "socials" : "Meine sozialen Medien",
+    "form": {
+        "title": "Kontakt aufnehmen!",
+        "first_name" : "Vorname",
+        "last_name" : "Nachname",
+        "message" : "Nachricht",
+        "policy": {
+            "I've read the": "Ich habe die",
+            "privacy policy":"Datenschutzerklärung",
+            "and agree to the processing of my data as outlined.": "gelesen und stimme der Verarbeitung meiner Daten zu, wie beschrieben."
+        },
+        "button": "Absenden"
+    }
+},
+"footer": {
+    "role": "Frontend-Entwicklerin",
+    "legal_notice": "Datenschutzerklärung",
+    "quick_links": {
+        "title" : "Schnelle Links",
+        "home": "Startseite",
+        "about": "Über mich",
+        "projects": "Projekte",
+        "contact": "Kontakt"
+    },
+    "contact_me": "Kontaktieren Sie mich",
+    "phone": "Telefon"
+  }
+   
+    
+  
+}

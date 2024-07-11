@@ -10,7 +10,7 @@ header {
 
 .mobile-menu {
   position: fixed;
-  right: 6px;
+  right: 30px;
   top: 6px;
   z-index: 1000;
   display: flex;
@@ -58,7 +58,7 @@ header {
     height: 90vh;
     display: flex;
     width: 100%;
-    animation: slideInRight 0.8s ease-in-out;
+    animation: slideInRight 0.2s ease-in-out;
 
     ul {
       padding: 0%;
@@ -124,6 +124,7 @@ button {
   opacity: 0.5;
   font-size: 17px;
   cursor: pointer;
+  padding-right: 30px;
 }
 
 .copyright {

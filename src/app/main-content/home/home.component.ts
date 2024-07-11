@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonService } from '../../service/common.service';
 import { NgZone } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -8,25 +9,38 @@ import { NgZone } from '@angular/core';
   styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  cyclingLetters: string[] = ['CREATIVE', 'INNOVATIVE', 'EXPERIMENTAL', 'HUMBLE'];
-  currentLetterNumber: number = 0;
+  cyclingWords: string[] = [];
+  currentWordIndex: number = 0;
   private intervalId: any;
 
   /**
    * inject the CommonService into the component
    * @param commonService - the common service
    */
-  constructor(private commonService: CommonService, private ngZone: NgZone) {}
+  constructor(
+    private commonService: CommonService,
+    private ngZone: NgZone,
+    private translate: TranslateService
+  ) {}
 
-  ngOnInit(): void {
+ ngOnInit(): void {
+    const keys = ['cyclingWords_1', 'cyclingWords_2', 'cyclingWords_3'];
+    keys.forEach((key) => {
+      this.translate.get('home.' + key).subscribe((translation: string) => {
+        this.cyclingWords.push(translation);
+        
+      });
+    });
+
     this.startCycleTexts();
   }
-
+  
   startCycleTexts() {
     this.ngZone.runOutsideAngular(() => {
       this.intervalId = setInterval(() => {
         this.ngZone.run(() => {
-          this.currentLetterNumber = (this.currentLetterNumber + 1) % this.cyclingLetters.length;
+          this.currentWordIndex =
+            (this.currentWordIndex + 1) % this.cyclingWords.length;
         });
       }, 1000);
     });

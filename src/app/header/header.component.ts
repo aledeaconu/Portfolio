@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../service/common.service';
+import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -11,14 +13,22 @@ export class HeaderComponent {
    * inject the CommonService into the component
    * @param commonService - the common service
    */
-  constructor(private commonService: CommonService) {}
+  constructor(private commonService: CommonService, 
+    private router: Router,
+  private translate: TranslateService) {}
 
+  switchLanguage(lang: 'en' | 'de' | 'ro'){
+    this.translate.use(lang)
+}
   /**
    * scroll to a specific anchor within the page
    * @param anchor - the ID of the anchor to scroll to
    */
   scrollToAnchor(anchor: string) {
-    this.commonService.scrollToAnchor(anchor);
+    this.router.navigate(['/'], {fragment: anchor}).then(() =>
+      this.commonService.scrollToAnchor(anchor)
+    )
+    
   }
 
   /**

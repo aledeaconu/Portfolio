@@ -1,10 +1,6 @@
-import {
-  Component,
-  QueryList,
-  ViewChildren,
-  ElementRef,
-  HostListener,
-} from '@angular/core';
+import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
@@ -12,57 +8,60 @@ import {
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  @ViewChildren('video') videos!: QueryList<ElementRef<HTMLVideoElement>>;
-
   projects = [
     {
       title: 'Pollo Loco',
       tech: 'JavaScript | HTML | CSS',
-      description:
-        'Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.',
+      description: 'projects.project_1',
       src: 'assets/video/pollo_loco.mp4',
       isDragged: false,
-      url: 'http://alexandra-deaconu.com/Pollo_Locco/index.html',
+      url: 'https://alexandra-deaconu.com/Pollo-Locco/index.html',
       gitHubShow: false,
-      gitLink: 'https://github.com/aledeaconu/Pollo-Loco'
+      gitLink: 'https://github.com/aledeaconu/Pollo-Loco',
     },
     {
       title: 'Ring Of Fire',
       tech: 'Angular | Typescript | Firebase',
-      description:
-        'Dive into this exciting multiplayer drinking game. Draw a card and follow the fun instructions to keep the party going.',
+      description: 'projects.project_2',
       shortDescription: 'Dive into this exciting multiplayer drinking game.',
       src: 'assets/video/ring-of-fire.mp4',
       isDragged: false,
       url: 'https://ring-of-fire-22138.web.app/',
       gitHubShow: false,
-      gitLink: 'https://github.com/aledeaconu/Ring-Of-Fire'
+      gitLink: 'https://github.com/aledeaconu/Ring-Of-Fire',
     },
     {
       title: 'Join',
       tech: 'JavaScript | HTML | CSS',
-      description:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+      description: 'projects.project_3',
       src: 'assets/video/join.mp4',
       isDragged: false,
       url: 'http://alexandra-deaconu.com/Join-main/index.html',
       gitHubShow: false,
-      gitLink: 'https://github.com/bwfront/Join'
+      gitLink: 'https://github.com/bwfront/Join',
     },
   ];
 
   isSmallScreen: boolean = false;
- openedProjectIndex: number | null = null;
-  
-toggleProjectDescription(index: number){
-  if(this.openedProjectIndex === index){
-    this.openedProjectIndex = null;
-  } else {
-    this.openedProjectIndex = index
+isGerm: boolean = false
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformID: Object
+  ) {
+   
+   
   }
-}
 
-
+  translateProject() {
+    this.projects.forEach((project, index) => {
+      this.translate
+        .get(`projects.project_${index + 1}`)
+        .subscribe((translation: string) => {
+          project.description = translation;
+         project.shortDescription = translation;
+        });
+    });
+  }
 
   /**
    * Toggle the "isDragged" property for a project description
@@ -71,9 +70,8 @@ toggleProjectDescription(index: number){
   dragDescription(index: number) {
     this.projects.forEach((project, i) => {
       project.isDragged = i === index && !project.isDragged;
-      project.gitHubShow = i === index && !project.gitHubShow
+      project.gitHubShow = i === index && !project.gitHubShow;
     });
-   
   }
 
   /**
@@ -89,7 +87,9 @@ toggleProjectDescription(index: number){
    * Check if the screen size is small
    */
   checkScreenSize() {
-    this.isSmallScreen = window.innerWidth <= 650;
+    if (isPlatformBrowser(this.platformID)) {
+      this.isSmallScreen = window.innerWidth <= 650;
+    }
   }
 
   /**

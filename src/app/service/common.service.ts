@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
+import { off } from 'node:process';
 
 @Injectable({
   providedIn: 'root',
@@ -8,12 +9,12 @@ export class CommonService {
   constructor(private scroller: ViewportScroller) {}
 
   private anchorOffsets: {
-    [key: string]: { desktop: number; tablet: number; mobile: number };
+    [key: string]: { desktop: number; tablet: number; mobile: number; };
   } = {
-    home: { desktop: 0, tablet: 0, mobile: 0 },
-    about: { desktop: -50, tablet: -20, mobile: 0 },
+    home: { desktop: 0, tablet: 0, mobile: 0,  },
+    about: { desktop: -100, tablet: -120, mobile: -10 },
     projects: { desktop: -50, tablet: -40, mobile: 0 },
-    contact: { desktop: -10, tablet: -40, mobile: 0 },
+    contact: { desktop: -100, tablet: -70, mobile: -10},
   };
 
   /**
@@ -29,13 +30,12 @@ export class CommonService {
 
       if (width <= 400) {
         offset = this.anchorOffsets[anchor].mobile;
-      } else if (width <= 1300){
+      } else if (width <= 1400) {
         offset = this.anchorOffsets[anchor].tablet;
       } else {
-        offset = this.anchorOffsets[anchor].desktop
+        offset = this.anchorOffsets[anchor].desktop;
       }
 
-    
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
 
