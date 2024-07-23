@@ -1,13 +1,4 @@
 section {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  padding-top: 20px;
-  flex-direction: column;
-
-  overflow: hidden;
-  margin-bottom: 20px;
-
 
   .mdc-floating-label,
   .mat-mdc-floating-label {
@@ -15,7 +6,7 @@ section {
   }
   .contact-container {
     width: 100%;
-    padding-left: 50px;
+   // padding-left: 50px;
     display: flex;
     flex-direction: column;
     align-items: baseline;
@@ -29,8 +20,7 @@ section {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
     width: 100%;
-    padding-left: 50px;
-    gap: 2vw;
+    gap: 1vw;
     margin-top: 20px;
   }
 }
@@ -38,15 +28,13 @@ section {
   width: 100%;
   display: flex;
   align-items: flex-start;
-  margin-left: 50px;
+  margin-left: 2rem;
   flex-direction: column;
-  font-size: clamp(0.8rem, 1rem + 10vw, 1.5rem);
-  line-height: 25px;
+  line-height: normal;
   text-align: justify;
   order: 1;
-  margin-bottom: 2vw;
-
   
+
   p {
     width: 70%;
   }
@@ -63,6 +51,7 @@ section {
   align-items: center;
   justify-content: center;
   order: 3;
+  height: fit-content;
 
   .contact-form {
     display: flex;
@@ -72,25 +61,33 @@ section {
     background-color: rgb(12, 12, 12);
     border: 1px solid #ffffff21;
     border-radius: 25px;
-    width: 20vw;
+    width: 45%;
     height: 100%;
-    padding: 1vw;
-    
+    padding: 1rem;
+
     .btn {
       margin-top: 0;
+      &.disabled-btn{
+        background: gray;
+        &:hover {
+          transform: scale(1);
+          cursor: pointer
+        }
+      }
+     
+      
     }
 
     p {
-      margin-top: 0.5vw;
-      margin-bottom: 1.5vw;
-      font-size: 2vw;
+      margin: 0
     }
 
     .flex {
       display: flex;
       width: 100%;
       justify-content: space-between;
-      gap: 16px;
+      gap: 1rem;
+      margin-top: 1rem;
     }
     a {
       text-decoration: none;
@@ -127,16 +124,14 @@ section {
 
     p {
       color: white;
-      font-size: 18px !important;
-      margin-bottom: 0 !important;
-      margin-top: 0 !important;
+      font-size: 1rem;
     }
   }
 
   .privacy-error {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     span {
-      font-size: 13px;
+      font-size: 0.88rem;
       opacity: 0.6;
     }
   }
@@ -157,7 +152,7 @@ section {
     .socials {
       .content {
         float: left;
-        width: 50%;
+        width: 5rem;
         height: 216px;
         box-sizing: border-box;
         position: relative;
@@ -172,7 +167,7 @@ section {
           margin: auto;
           position: absolute;
           height: 150px;
-          font-size: 1.5vw;
+          font-size: 1rem;
           line-height: normal;
         }
       }
@@ -181,27 +176,30 @@ section {
 
   .socials-icons {
     display: flex;
-    justify-self: center;
+    justify-content: center;
     flex-wrap: wrap;
+ 
 
     a {
       position: relative;
       display: inline-block;
 
       &:nth-child(1) {
-        top: 15.95vw;
-        right: 6vw;
-        transform: rotate(-5deg);
+        position: absolute;
+      top: 80%;
+        left: 53%;
+    
 
         &:hover {
-          transform: rotate(-2deg);
+          transform: rotate(5deg);
         }
       }
 
       &:nth-child(2) {
-        top: 14.63vw;
-        right: 5vw;
-        transform: rotate(3deg);
+        position: absolute;
+        top: 70%;
+        left: 58%;
+
 
         &:hover {
           transform: rotate(5deg);
@@ -209,19 +207,17 @@ section {
       }
 
       &:nth-child(3) {
-        top: 3.26vw;
-        right: 15px;
-        transform: rotate(-2deg);
+        position: absolute;
+        top: 80%;
+        left: 63%;
+     
 
         &:hover {
-          transform: rotate(0deg);
+          transform: rotate(5deg);
         }
       }
 
-      &:nth-child(4) {
-        top: 10.68vw;
-        right: 10vw;
-        transform: rotate(4deg);
+      
 
         &:hover {
           transform: rotate(6deg);
@@ -229,166 +225,96 @@ section {
       }
 
       img {
-        width: 5vw;
+        width: 5rem;
         height: auto;
         animation: float 2s ease-in-out infinite;
 
-        &:nth-child(1) {
-          animation-delay: 0.5s;
-        }
 
-        &:nth-child(2) {
-          animation-delay: 0.8s;
-        }
-
-        &:nth-child(3) {
-          animation-delay: 0.2s;
-        }
-
-        &:nth-child(4) {
-          animation-delay: 0.4s;
-        }
+       
       }
     }
   }
-}
-.arrow {
-  position: relative;
-  margin: 0 auto;
-  width: 10vw;
 
-  .curve {
-    border: 0.2vw solid #17b4be;
-    border-color: transparent transparent transparent #17b4be;
-    height: 18vw;
-    width: 11vw;
-    border-radius: 15vw 0 0 10vw;
-  }
+  .arrow {
+    position: relative;
+    margin: 0 auto;
+    width: 10vw;
 
-  .point {
-    position: absolute;
-    left: 2.01vw;
-    top: 15.8vw;
+    .curve {
+      border: 0.2vw solid #17b4be;
+      border-color: transparent transparent transparent #17b4be;
+      height: 18rem;
+      width: 12rem;
+      border-radius: 15rem 0 0 10rem;
+      z-index: 1;
+    }
 
-    &:before,
-    &:after {
-      border: 0.1vw solid #17b4be;
-      height: 1.5vw;
-      content: "";
+    .point {
       position: absolute;
-    }
+      left: 2.01rem;
+      top: 15.8rem;
 
-    &:before {
-      top: -0.7vw;
-      left: -0.7vw;
-      transform: rotate(-74deg);
-    }
+      &:before,
+      &:after {
+        border: 0.1vw solid #17b4be;
+        height: 1.5vw;
+        content: "";
+        position: absolute;
+        z-index: 2;
+      }
 
-    &:after {
-      top: -1.2vw;
-      left: 0.3vw;
-      transform: rotate(12deg);
+      &:before {
+        top: -0.7vw;
+        left: -0.7vw;
+        transform: rotate(-74deg);
+      }
+
+      &:after {
+        top: -1.2vw;
+        left: 0.3vw;
+        transform: rotate(12deg);
+      }
     }
   }
-}
+
+
 
 /* Responsive Styles */
-@media (min-width: 2000px) {
-  section{
-   justify-content: center;
-    padding-top: 60px;
-    margin-bottom: 100px;
-  }
-  .contact-options-form {
-    height: auto;
-    align-items: center;
-    display: flex;
-
-    mat-form-field {
-      margin-top: 1vw;
+@media (min-width: 6500px) {
+  .contact-options-social{
+    .socials-icons { 
+      padding-left: 35% ;
+    padding-top: 0% ;
+   
     }
+   }
 
-    .contact-form {
-      width: 25vw;
-      ::ng-deep .mat-mdc-floating-label{
-        padding-top: 55px !important;
-        ::ng-deep ::after{
-          font-size: 1vw;
-        }
-      }
-      
-
-      input,
-      mat-label,
-      mat-error {
-        height: 3vh;
-        font-size: 1vw;
-      }
-
-      mat-error {
-      
-        margin-top: 30px !important;
-        margin-top: 20px;
-        
-      }
-
-      textarea {
-        
-        height: 7vh;
-        font-size: 1vw;
-        padding-top: 20px;
-      }
-    }
-
-    .btn {
-      font-size: 1.2vw;
-    }
-
-    p {
-      font-size: 1.8vw;
-      
-    }
-
-    mat-checkbox {
-      margin-bottom: 2vw;
-      margin-top: 1vw;
-      p {
-        font-size: 1vw !important;
-        line-height: normal;
-
-        margin-left: 50px;
-        margin-right: 50px;
-      }
-      ::ng-deep .mdc-checkbox__background{
-        width: 50px ;
-        height: 50px ;
-      }
-      
-    }
-    
-  }
-  .mat-mdc-form-field-flex  {
-  .mat-mdc-form-field-infix {
-    padding-top: 100px !important;
-    label {
-      padding-top: 100px !important;
-    }
-  }
 }
-}
+@media (min-width: 3400px) and (max-width: 6499px) {
+  .contact-options-social{
+    .socials-icons { 
+      padding-left: 20% ;
+    padding-top: 0% ;
 
 
-@media (max-width: 1600px) {
-  .contact-text {
-    margin-left: 0px !important;
-    p {
-      width: 95% !important;
+    }
+    }
+   }
+   
+
+
+
+@media (min-width: 1920px) and (max-width: 3399px) {
+  .contact-options-social{
+    .socials-icons {
+      padding-left: 8%;
+    padding-top: 18%;
+     
+  
+      }
     }
   }
-  .label-left {
-    width: 25%;
-  }
-}
+  
 
 
 @media (max-width: 1300px) {
@@ -402,6 +328,7 @@ section {
     .contact-options-social {
       order: 2;
       margin-top: 0px;
+      padding-left: 25%;
     }
     .socials-responsive {
       display: none;
@@ -409,9 +336,7 @@ section {
 
     .contact-options-form {
       width: 200%;
-      .contact-form {
-        width: 40%;
-      }
+     
 
       h1 {
         font-size: 16px !important;
@@ -429,19 +354,20 @@ section {
     }
   }
   .socials-icons {
-    margin-left: -60px;
-    margin-top: -55px;
+    margin-left: -12%;
+    margin-top: 0%;
     a:nth-child(1),
     a:nth-child(2),
-    a:nth-child(3),
-    a:nth-child(4) {
-      top: 20px !important;
-      right: 0px !important;
+    a:nth-child(3) {
+      position: relative !important;
+      top: 0px !important;
+      left: 0px !important;
     }
 
     img {
       width: 50px !important;
       height: 50px !important;
+      animation: none !important;
     }
   }
   .arrow .curve {
@@ -460,14 +386,8 @@ section {
   }
 }
 
-@media (max-width: 1050px) {
-  .label-left {
-    width: 60% !important;
-  }
-}
-
-@media (max-width: 900px) {
-  section{
+@media (max-width: 1000px) {
+  section {
     min-height: 0;
     padding-top: 20px;
   }
@@ -476,16 +396,19 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80% !important;
     gap: 30px;
     padding-left: 0 !important;
   }
+
+  .contact-text{
+    margin-left: 0;
+    align-items: center;
+  }
   .contact-options-form {
     width: 100% !important;
-
-    .contact-form {
-      width: 80% !important;
-    }
+.contact-form{
+  width: 50%;
+}
   }
 
   .socials {
@@ -499,24 +422,35 @@ section {
 @media (max-width: 650px) {
   section {
     padding-top: 20px;
+    .contact-container{
+      padding-left: 0;
+    }
   }
   .label-left {
     width: 60%;
   }
+  
   .contact-content {
+    
     .contact-options-form {
       flex-direction: column;
       padding: 20px;
 
       .contact-form {
-        width: 80vw !important;
-        height: auto !important;
+        width: 70%;
         padding: 15px;
         p {
-          font-size: 18px;
-          margin-bottom: 20px;
+          font-size: 16px;
+         // margin-bottom: 20px;
         }
       }
     }
   }
 }
+
+@media (max-width: 380px) {
+  section{
+   margin: 0 auto;
+   width: 80%;
+  }
+ }

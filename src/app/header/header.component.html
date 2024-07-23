@@ -1,17 +1,62 @@
-<header class="hide-mobile" >
-  <nav >
-    <div>
-      <img (click)="scrollToAnchor('home')" src="assets/img/[AD].png">
-    </div>
-<ul class="menu">
-  <li><a [class.selected]="selectedAnchor === 'home'" (click)="scrollToAnchor('home')">// {{'nav.home' | translate}} </a></li>
-  <li><a [class.selected]="selectedAnchor === 'about'" (click)="scrollToAnchor('about')">// {{'nav.about' | translate}}</a></li>
-  <li><a [class.selected]="selectedAnchor === 'projects'" (click)="scrollToAnchor('projects')">// {{'nav.projects' | translate}}</a></li>
-  <li><a [class.selected]="selectedAnchor === 'contact'" (click)="scrollToAnchor('contact')">// {{'nav.contact' | translate}}</a></li>
-</ul>
-  </nav>
-  <button (click)="switchLanguage('en')">EN</button>
-<button (click)="switchLanguage('de')">DE</button>
-<button (click)="switchLanguage('ro')">RO</button>
 
+<header class="hide-mobile">
+  <section>
+    <nav>
+      <div class="logo">
+        <img (click)="scrollToAnchor('home')" src="assets/img/[AD].png" />
+      </div>
+      
+      <div class="menu">
+        <ul class="nav__list">
+          <li>
+            <a
+              [class.selected]="selectedAnchor === 'home'"
+              (click)="scrollToAnchor('home')"
+              >// {{ "nav.home" | translate }}
+            </a>
+          </li>
+          <li>
+            <a
+              [class.selected]="selectedAnchor === 'about'"
+              (click)="scrollToAnchor('about')"
+              >// {{ "nav.about" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              [class.selected]="selectedAnchor === 'projects'"
+              (click)="scrollToAnchor('projects')"
+              >// {{ "nav.projects" | translate }}</a
+            >
+          </li>
+          <li>
+            <a
+              [class.selected]="selectedAnchor === 'contact'"
+              (click)="scrollToAnchor('contact')"
+              >// {{ "nav.contact" | translate }}</a
+            >
+          </li>
+        </ul>
+        <div class="nav__languages">
+          <img
+            class="flag"
+            src="assets/img/uk-flag.svg"
+            (click)="switchLanguage('en')"
+          />
+          <img
+            class="flag"
+            src="assets/img/de-flag.svg"
+            (click)="switchLanguage('de')"
+          />
+          <img
+            class="flag"
+            src="assets/img/ro-flag.svg"
+            (click)="switchLanguage('ro')"
+          />
+        </div>
+      </div>
+    </nav>
+  
+  </section> 
 </header>
+

@@ -1,13 +1,14 @@
-import { Component, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import AOS from 'aos'
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit{
   projects = [
     {
       title: 'Pollo Loco',
@@ -15,7 +16,7 @@ export class ProjectsComponent {
       description: 'projects.project_1',
       src: 'assets/video/pollo_loco.mp4',
       isDragged: false,
-      url: 'https://alexandra-deaconu.com/Pollo-Locco/index.html',
+      url: 'https://alexandra-deaconu.com/projects/Pollo-Locco/index.html',
       gitHubShow: false,
       gitLink: 'https://github.com/aledeaconu/Pollo-Loco',
     },
@@ -36,20 +37,29 @@ export class ProjectsComponent {
       description: 'projects.project_3',
       src: 'assets/video/join.mp4',
       isDragged: false,
-      url: 'http://alexandra-deaconu.com/Join-main/index.html',
+      url: 'http://alexandra-deaconu.com/projects/Join-main/index.html',
       gitHubShow: false,
       gitLink: 'https://github.com/bwfront/Join',
     },
   ];
 
   isSmallScreen: boolean = false;
-isGerm: boolean = false
+  isGerm: boolean = false
+  dragStartIndex: number | null = null;
+
   constructor(
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformID: Object
   ) {
    
    
+  }
+
+  ngOnInit(): void {
+    if(isPlatformBrowser(this.platformID)){
+      AOS.init()
+    }
+ 
   }
 
   translateProject() {
@@ -63,16 +73,21 @@ isGerm: boolean = false
     });
   }
 
-  /**
-   * Toggle the "isDragged" property for a project description
-   * @param index - the index of the project in the projects array
-   */
-  dragDescription(index: number) {
+ dragDescriptionStart(index: number, event: Event){
+  this.dragStartIndex = index
+ }
+
+ dragDescriptionEnd(event: Event){
+  event.preventDefault();
+  if(this.dragStartIndex !== null){
     this.projects.forEach((project, i) => {
-      project.isDragged = i === index && !project.isDragged;
-      project.gitHubShow = i === index && !project.gitHubShow;
-    });
+      project.isDragged = i === this.dragStartIndex && !project.isDragged;
+      project.gitHubShow = i === this.dragStartIndex && !project.gitHubShow;
+    })
+    this.dragStartIndex = null
   }
+ }
+
 
   /**
    * HostListener to detect window resize events

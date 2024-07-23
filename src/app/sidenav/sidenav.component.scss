@@ -1,7 +1,7 @@
 header {
   border-bottom: 1px solid rgba(255, 255, 255, 0.195);
   width: 100vw;
-  z-index: 999;
+  z-index: 99;
   background-color: rgb(0, 0, 0);
   top: 0;
   font-family: "Libre";
@@ -10,25 +10,72 @@ header {
 
 .mobile-menu {
   position: fixed;
-  right: 30px;
-  top: 6px;
-  z-index: 1000;
+  right: 0;
+  z-index: 99;
   display: flex;
   align-items: center;
   padding: 10px;
   cursor: pointer;
   
-  &.open ._shape {
-    display: none;
+  &.open ._shape_1 {
+   animation: transform_shape1 0.2s ease-in-out forwards
+  
+  }
+  &.open ._shape_2 {
+    animation: transform_shape2 0.2s ease-in-out forwards
+
+  }
+  &:not(.open) ._shape_1{
+    animation: reverse_transform_shape1 0.2s ease-in-out forwards
+  }
+  &:not(.open) ._shape_2{
+    animation: reverse_transform_shape2 0.2s ease-in-out forwards
+  }
+
+  @keyframes transform_shape1 {
+    0%{
+      transform: rotate(0deg);
+    } 
+    100%{
+      transform: rotate(-45deg) translate(4px, 5px);
+    }
+  }
+  @keyframes transform_shape2{
+    0%{
+      transform: rotate(0deg);
+    } 
+    100%{
+      transform: rotate(45deg) translate(0px, -10px);
+    }
+  }
+
+  @keyframes reverse_transform_shape1 {
+    0%{
+      transform: rotate(-45deg) translate(4px, 5px);
+    } 
+    100%{
+      transform: rotate(0deg);
+    }
+  }
+  @keyframes reverse_transform_shape2{
+    0%{
+      transform: rotate(45deg) translate(0px, -10px);
+      
+    } 
+    100%{
+      transform: rotate(0deg);
+    }
   }
   
-  ._shape {
-    width: 13px;
+  ._shape_1,
+  ._shape_2 {
+    width: 20px;
     margin: 7px;
     display: block;
     height: 1px;
     background-color: white;
-    opacity: 0.6;
+    opacity: 1;
+    z-index: 999;
   }
 }
 
@@ -37,9 +84,9 @@ header {
   background-color: rgba(0, 0, 0);
   top: 0;
   right: 0;
-  z-index: 99999;
+  z-index: 9;
   height: 100vh;
-  width: 50%;
+  width: 25%;
   display: flex;
   flex-direction: column;
   align-items: end;
@@ -53,6 +100,7 @@ header {
   &.open {
     transform: translateX(0);
   }
+
 
   .menu {
     height: 90vh;
@@ -68,7 +116,7 @@ header {
       align-items: flex-start;
 
       li {
-        margin: 9px 15px;
+        margin: 9px 3px;
         list-style: none;
 
         a {
@@ -130,8 +178,9 @@ button {
 .copyright {
   opacity: 0.2;
   font-size: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 1rem;
   font-family: "playfair";
+  width: 100%;
 
   a {
     text-decoration: none;
@@ -178,3 +227,39 @@ button {
   display: block;
   z-index: 1;
 }
+.languages{
+  display: flex;
+  gap: 2px;
+  width: 100%;
+ // position: absolute;
+  justify-content: flex-start;
+  margin-right: 2%;
+  margin-bottom: 3%;
+  .flag{
+    width: 30px;
+    height: 15px;
+    border: 1px solid rgb(87, 84, 84);
+    margin-right: 5px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.7;
+    &:hover{
+      opacity: 1;
+    }
+  }
+  
+  }
+  @media (max-width: 450px) {
+    .mobile-navigation{
+      width: 40%;
+    }
+  }
+  @media (max-width: 380px) {
+    .mobile-navigation{
+      padding: 0 10px;
+    
+      .menu{
+        margin-top: 2rem;
+      }
+    }  
+  }

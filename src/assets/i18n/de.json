@@ -30,6 +30,7 @@
         "button": "Beschreibung erweitern"
    },
    "contact": {
+    "title": "KONTAKT",
     "span": "Ich bin hier, um Ihnen zu helfen, alle Programmierherausforderungen zu lösen, Ihre Ideen in die Realität umzusetzen oder Unterstützung für Ihre Projekte zu bieten.",
     "p": "Füllen Sie das untenstehende Formular aus oder senden Sie mir eine direkte Nachricht.",
     "cta" : "Ich freue mich auf die Zusammenarbeit mit Ihnen",
@@ -39,14 +40,18 @@
         "first_name" : "Vorname",
         "last_name" : "Nachname",
         "message" : "Nachricht",
+        "required-error": "Sie müssen einen Wert eingeben",
+        "email-error": "Keine gültige E-Mail-Adresse",
+        "button": "Absenden",
         "policy": {
             "I've read the": "Ich habe die",
             "privacy policy":"Datenschutzerklärung",
-            "and agree to the processing of my data as outlined.": "gelesen und stimme der Verarbeitung meiner Daten zu, wie beschrieben."
-        },
-        "button": "Absenden"
-    }
-},
+            "and agree to the processing of my data as outlined.": "gelesen und stimme der Verarbeitung meiner Daten zu, wie beschrieben.",
+            "Please check the": "Bitte überprüfen Sie die",
+            "agreement": ""
+            }
+        }
+    },
 "footer": {
     "role": "Frontend-Entwicklerin",
     "legal_notice": "Datenschutzerklärung",

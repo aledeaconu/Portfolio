@@ -1,28 +1,41 @@
-import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 import { merge } from 'rxjs';
 import { IntersectionObserverService } from '../../service/intersection-observer.service';
+import AOS from 'aos';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent implements AfterViewInit {
+export class ContactComponent implements AfterViewInit, OnInit {
   @ViewChild('textAnimation') textAnimation!: ElementRef;
-
   email = new FormControl('', [Validators.required, Validators.email]);
-  firstName = new FormControl('', Validators.required);
-  lastName = new FormControl('', Validators.required);
-  message = new FormControl('', Validators.required);
-  privacyPolicy = new FormControl(false, Validators.requiredTrue);
-
   errorMessage = '';
+
+  contactData = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    message: '',
+  };
+
+  privacyPolicy = new FormControl(false, Validators.requiredTrue);
   privacyPolicyError = false;
 
   post = {
-    endPoint: 'https://alexandra-deaconu.com/sendMail.php',
+    endPoint: 'https://alexandra-deaconu.com/helpers/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -33,17 +46,23 @@ export class ContactComponent implements AfterViewInit {
 
   constructor(
     private http: HttpClient,
-    private interstionObs: IntersectionObserverService
+    private interstionObs: IntersectionObserverService,
+    @Inject(PLATFORM_ID) private platformID: Object
   ) {
     merge(this.email.statusChanges, this.email.valueChanges).subscribe(() =>
       this.updateErrorMessage()
     );
+    this.privacyPolicy.valueChanges.subscribe(() => this.updatePrivacyPolicyError())
   }
 
   ngAfterViewInit(): void {
     this.interstionObs.observeAnimatedText(this.textAnimation.nativeElement);
   }
-
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformID)) {
+      AOS.init();
+    }
+  }
   // Method to update error message based on email validation status
   updateErrorMessage() {
     if (this.email.hasError('required')) {
@@ -55,35 +74,23 @@ export class ContactComponent implements AfterViewInit {
     }
   }
 
+  updatePrivacyPolicyError(){
+    this.privacyPolicyError = false
+  }
   // Method to handle form submission
-  onSubmit() {
-    this.email.markAsTouched();
-    this.firstName.markAsTouched();
-    this.lastName.markAsTouched();
-    this.message.markAsTouched();
-    this.privacyPolicy.markAsTouched();
-
-    if (
-      this.email.valid &&
-      this.firstName.valid &&
-      this.lastName.valid &&
-      this.message.valid &&
-      this.privacyPolicy.valid
-    ) {
-      const formData = {
-        firstName: this.firstName.value,
-        lastName: this.lastName.value,
-        email: this.email.value,
-        message: this.message.value,
-        privacyPolicy: this.privacyPolicy.value,
-      };
-
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && this.privacyPolicy.valid) {
       this.http
-        .post(this.post.endPoint, this.post.body(formData), this.post.options)
+        .post(
+          this.post.endPoint,
+          this.post.body(this.contactData),
+          this.post.options
+        )
         .subscribe({
           next: (response) => {
-            this.resetForm();
-            this.resetPrivacyPolicyError();
+            ngForm.resetForm();
+            this.email.reset('');
+            this.privacyPolicy.reset(false);
             console.info('Email sent successfully');
           },
           error: (error) => {
@@ -93,19 +100,5 @@ export class ContactComponent implements AfterViewInit {
     } else {
       this.privacyPolicyError = !this.privacyPolicy.value;
     }
-  }
-
-  // Method to reset form fields
-  resetForm() {
-    this.email.reset();
-    this.firstName.reset();
-    this.lastName.reset();
-    this.message.reset();
-    this.privacyPolicy.reset(false);
-  }
-
-  // Method to reset privacy policy error
-  resetPrivacyPolicyError() {
-    this.privacyPolicyError = false;
   }
 }

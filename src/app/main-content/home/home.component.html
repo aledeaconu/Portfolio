@@ -1,4 +1,4 @@
-<section id="home">
+<section id="home" class="d-flex">
   <div class="background-shapes">
     <img src="assets/img/code-shape.png" class="shape shape1" alt="shape" />
     <img src="assets/img/code-shape.png" class="shape shape2" alt="shape" />
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div class="personal-pic-area">
-      <img class="personal-pic" src="assets/img/file.png" />
+      <img class="personal-pic" src="assets/img/personal-pic.png" />
     </div>
   </div>
 
@@ -35,5 +35,8 @@
     <button class="btn" (click)="scrollToAnchor('about')">{{ 'home.learn_more_button' | translate}}</button>
     <button class="btn" (click)="scrollToAnchor('projects')">{{ 'home.my_work_button' | translate}}</button>
   </div>
-  <img class="separator" src="assets/img/html code.png" />
+  <div class="separator" >
+    <img src="assets/img/html code.png" />
+  </div>
+  
 </section>

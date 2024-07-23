@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../service/common.service';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -12,8 +13,11 @@ export class SidenavComponent {
    * inject the CommonService into the component
    * @param commonService - the common service
    */
-  constructor(private commonService: CommonService, private router: Router) {}
+  constructor(private commonService: CommonService, private router: Router, private translate: TranslateService) {}
 
+  switchLanguage(lang: string){
+    this.translate.use(lang)
+  }
   /**
    * scroll to a specific anchor within the page using CommonService
    * @param anchor - the ID of the anchor element to scroll to
@@ -40,5 +44,7 @@ export class SidenavComponent {
   toggleMenu(event: Event) {
     event.preventDefault();
     this.isMenuOpen = !this.isMenuOpen;
+    
   }
+ 
 }

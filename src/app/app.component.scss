@@ -3,16 +3,16 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-left: 50px;
+  //max-width: 1920px;
 }
 .cursor-dot {
-  width: 0.4vw;
-  height: 0.8vh;
+  width: 0.4rem;
+  height: 0.8rem;
   background-color: #17b4b2;
 }
 .cursor-outline {
-  width: 1.5vw;
-  height: 2vh;
+  width: 1.5rem;
+  height: 2rem;
   border: 0.01vw solid white;
 }
 .cursor-dot,
@@ -22,16 +22,18 @@
   left: -19px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  z-index: 9999;
+  z-index: 99999;
   pointer-events: none;
 }
 
-@media (min-width: 2400px) {
+@media (min-width: 1920px) {
   .main-component {
     margin: 0 auto;
     width: 65%;
   }
+  
 }
+
 @media (max-width: 430px) {
   .main-component {
     margin-left: 25px;

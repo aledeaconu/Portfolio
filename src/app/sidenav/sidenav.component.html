@@ -1,15 +1,13 @@
 <header>
     <div class="hide-desktop mobile-menu" [ngClass]="{ open: isMenuOpen }">
-      <a (click)="toggleMenu($event)">
-        <span class="_shape"></span>
-        <span class="_shape"></span>
+      <a (click)="toggleMenu($event)" [ngClass]="{open: isMenuOpen}">
+        <span class="_shape_1"></span>
+        <span class="_shape_2"></span>
       </a>
     </div>
   
-    <div class="mobile-navigation" [ngClass]="{ open: isMenuOpen, 'd-none': !isMenuOpen }">
-      <a href="#" (click)="toggleMenu($event)">
-        <button>X</button>
-      </a>
+    <div class="mobile-navigation" [ngClass]="{ open: isMenuOpen }">
+   
   
       <div class="menu">
         <ul>
@@ -27,6 +25,14 @@
           </li>
         </ul>
       </div>
+        <div class="languages">
+          <img class="flag" src="assets/img/uk-flag.svg" (click)="switchLanguage('en')">
+          <img class="flag" src="assets/img/de-flag.svg" (click)="switchLanguage('de')">
+          <img class="flag" src="assets/img/ro-flag.svg" (click)="switchLanguage('ro')">
+          
+        </div>
+      
+    
       
       <div class="copyright">
         &copy; 2024. Made with <br> passion by

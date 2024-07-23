@@ -24,9 +24,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/portfolio/",
+            "outputPath": "dist/Portfolio/",
             "index": "./src/index.html",
             "browser": "./src/main.ts",
+            "baseHref": "/",
             "polyfills": [
               "zone.js"
             ],
@@ -38,6 +39,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/aos/dist/aos.css",
               "./src/styles.scss"
             ],
             "scripts": ["node_modules/intersection-observer/intersection-observer.js"],

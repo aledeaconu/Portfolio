@@ -1,14 +1,7 @@
 section {
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
   min-height: 100vh;
-  margin-top: 50px;
 }
 
 .shape1 {
@@ -28,19 +21,17 @@ section {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 45%;
   margin-bottom: 50px;
+  gap: 2vw
 }
 
 .text-area {
   position: relative;
   text-align: left;
   width: 100%;
-  min-width: 100%;
-  
 }
 
-h1{
+h1 {
   margin-bottom: 10px;
   animation: fadeIn 2s ease-in-out;
   font-family: "libre";
@@ -55,37 +46,26 @@ h1{
 
 .name-text {
   position: relative;
-  font-size: 56px;
+  font-size: 3.5rem;
   color: #17b4b2;
   font-family: "Libre";
 }
 
 .cycling-letters-container {
-  display: flex;
-  align-items: center;
-  
-
   .cycling-letter {
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: bold;
     text-shadow: 1px 1px 2px #17b4b2;
- 
-
     &.active {
       opacity: 0.8;
     }
-  
   }
-  
   .role-text-container {
-    
     .role-text {
       color: #17b4b2;
       font-family: "Libre";
-      font-size: 28px;
+      font-size: 1.75rem;
       text-transform: uppercase;
-      
-     
     }
   }
 }
@@ -95,17 +75,12 @@ h1{
   z-index: 9;
 
   img {
-    width: 300px;
-    height: 300px;
-    border-radius: 33%;
+    width: 400px;
+    height: auto;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease-in-out;
     animation: zoomIn 1.5s ease-in-out;
-    
 
-    &:hover {
-      transform: scale(1.1);
-    }
   }
 }
 
@@ -121,68 +96,47 @@ h1{
 .separator {
   opacity: 0.5;
   position: absolute;
-  top: 75%;
-  left: 3%;
   z-index: -1;
-  width: 40vw;
-}
-
-/* Responsive Styles */
-
-@media (min-width: 2500px) {
- 
-  .greeting-section{
-    margin-bottom: 1.5vw;
-    .text-area{
-      line-height: 1vw;
-      .name-text{
-        font-size: 2.5vw 
-      }
-      .welcome-text{
-        font-size: 3vw;
-        margin-bottom: 2.5vw;
-       
-      }
-      
-      .role-text{
-        font-size: 1.3vw;
-      }
-      p{
-        font-size: 80px !important;
-      }
-    }
-    img{
-      width: 15vw;
-      height: auto;
-    }
-    
-    .cycling-letter{
-      font-size: 0.8vw;
-    }
+  width: 100%;
+  top: 75%;
+  img {
+    width: 60%;
   }
 }
 
+/* Responsive Styles */
+@media (min-width: 1920px) {
+  .shape1 {
+    width: 5vw;
+  }
 
-
+  .shape2 {
+    width: 3.5vw;
+  }
+}
+@media (max-width: 1400px) {
+  .separator{
+    top: 80%;
+  }
+}
 @media (max-width: 1000px) {
   .greeting-section {
     flex-direction: column;
     width: 70%;
-    margin-top: 60px;
+    margin-top: 3rem;
     margin-bottom: 10px;
-
+    .text-area {
+      text-align: center;
+    }
     img {
       width: 200px;
-      height: 200px;
       margin-top: 25px;
     }
   }
-
-
+  
 }
 
 @media (max-width: 650px) {
-
   .welcome-text {
     font-size: 35px;
   }
@@ -201,8 +155,9 @@ h1{
     gap: 10px;
   }
 
-  .separator {
-    top: 85%;
-    width: 80vw;
+}
+@media (max-width: 450px) {
+  .separator{
+    display: none;
   }
 }

@@ -17,7 +17,7 @@
     },
     "about_me": {
          "title": "ABOUT ME",
-         "text": "My name is Alexandra Deaconu and I am a passionate front-end web developer, originally from Romania and now living in Berlin. I look forward to new and exciting projects and always strive to deliver my best work. My goal is to make a significant contribution to the success of the organizations I work with to ensure mutual growth and prosperity.",
+         "text": "My name is Alexandra Deaconu and I am a passionate front-end web developer, originally from Romania and now living in Berlin. I am looking forward to new and exciting projects and always strive to deliver high-quality work. My goal is to make a significant contribution to the success of the organizations I work with to ensure mutual growth and prosperity.",
          "cta": "If you think I’d be a good match for your projects, contact me!",
          "button": "Open CV",
          "skills": "SKILLS"
@@ -34,24 +34,27 @@
 
    },
    "contact": {
-    "span": "I'm here to help you solve any programming challenges, turn your ideas into reality or provide support for your projects.",
+    "title": "CONTACT",
+    "span": "I'm here to help you solve any programming challenges, turn your vision into reality or provide support for your ongoing projects.",
     "p": "Fill out the form below or send me a direct message.",
-    "cta" : "I look forward to collaborate with you!",
+    "cta" : "I am looking forward to collaborate with you!",
     "socials" : "My social media",
     "form": {
         "title": "Get in touch!",
         "first_name" : "First Name",
         "last_name" : "Last Name",
         "message" : "Message",
+        "required-error": "You must enter a value",
+        "email-error": "Not a valid email",
+        "button": "Submit",
         "policy": {
             "I've read the": "I've read the",
             "privacy policy":"privacy policy",
-            "and agree to the processing of my data as outlined.": "and agree to the processing of my data as outlined."
-
-        } ,
-        "button": "Submit"
+            "and agree to the processing of my data as outlined.": "and agree to the processing of my data as outlined.",
+            "Please check the": " Please check the",
+            "agreement": "agreement"
+        }
     }
-
    },
    "footer": {
     "role": "Web Developer",

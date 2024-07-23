@@ -13,7 +13,7 @@ export class CommonService {
   } = {
     home: { desktop: 0, tablet: 0, mobile: 0,  },
     about: { desktop: -100, tablet: -120, mobile: -10 },
-    projects: { desktop: -50, tablet: -40, mobile: 0 },
+    projects: { desktop: -70, tablet: -60, mobile: -10 },
     contact: { desktop: -100, tablet: -70, mobile: -10},
   };
 
@@ -28,9 +28,9 @@ export class CommonService {
       let width = window.innerWidth;
       let offset: number;
 
-      if (width <= 400) {
+      if (width <= 600) {
         offset = this.anchorOffsets[anchor].mobile;
-      } else if (width <= 1400) {
+      } else if (width <= 1024) {
         offset = this.anchorOffsets[anchor].tablet;
       } else {
         offset = this.anchorOffsets[anchor].desktop;

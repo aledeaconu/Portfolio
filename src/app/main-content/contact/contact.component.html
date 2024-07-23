@@ -1,9 +1,12 @@
-<section id="contact">
+<section id="contact" class="d-flex">
+  <div class="label-container-right">
+  <div class="label-left">
+    <div class="line"></div>
+    <span class="labels-span">{{ 'contact.title' | translate}}</span>
+  </div>
+</div>
   <div class="contact-container">
-    <div class="label-left">
-      <div class="line"></div>
-      <span class="labels-span">Contact</span>
-    </div>
+   
   </div>
   <div class="contact-content">
     <div class="contact-text">
@@ -16,7 +19,7 @@
     </div>
     <div class="socials-responsive"></div>
     <div class="contact-options-social">
-      <div class="socials-area">
+      <div class="socials-area" >
         <div class="socials">
           <div class="content">
             <div class="arrow">
@@ -32,9 +35,7 @@
           <a href="https://wa.me/15111786993" target="_blank"
             ><img src="assets/img/icons/whatsapp-icon.png"
           /></a>
-          <a href="https://www.instagram.com/aledeaconu/" target="_blank"
-            ><img src="assets/img/icons/instagram-icon.png"
-          /></a>
+         
           <a
             href="https://www.linkedin.com/in/alexandra-deaconu/"
             target="_blank"
@@ -47,32 +48,32 @@
       </div>
     </div>
     
-    <div class="contact-options-form">
-      <form class="contact-form" (ngSubmit)="onSubmit()">
+    <div class="contact-options-form" data-aos="fade-right">
+      <form class="contact-form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <p>{{ 'contact.form.title' | translate }}</p>
         <div class="flex">
           <mat-form-field>
             <mat-label>{{ 'contact.form.first_name' | translate }}</mat-label>
-            <input matInput required [formControl]="firstName" />
+            <input matInput required name="firstName" [(ngModel)]="contactData.firstName"/>
            
           </mat-form-field>
           <mat-form-field>
             <mat-label>{{ 'contact.form.last_name' | translate }}</mat-label>
-            <input matInput required [formControl]="lastName" />
+            <input matInput required name="lastName" [(ngModel)]="contactData.lastName" />
            
           </mat-form-field>
         </div>
         <mat-form-field>
-          <mat-label>Email</mat-label>
+          <mat-label>E-mail</mat-label>
           <input matInput placeholder="pat@example.com" [formControl]="email" />
           <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
-            <span *ngIf="email.hasError('required')">You must enter a value</span>
-            <span *ngIf="email.hasError('email')">Not a valid email</span>
+            <span *ngIf="email.hasError('required')">{{"contact.form.required-error" | translate}}</span>
+            <span *ngIf="email.hasError('email')">{{"contact.form.email-error" | translate}}</span>
           </mat-error>
         </mat-form-field>
         <mat-form-field>
           <mat-label>{{ 'contact.form.message' | translate }}</mat-label>
-          <textarea matInput required [formControl]="message"></textarea>
+          <textarea matInput required name="message" [(ngModel)]="contactData.message"></textarea>
           
         </mat-form-field>
         <mat-checkbox [formControl]="privacyPolicy">
@@ -84,14 +85,16 @@
         </mat-checkbox>
         <div *ngIf="privacyPolicyError" class="privacy-error">
           <span>
-            Please check the
-            <a [routerLink]="['/legal-notice']">privacy policy</a> agreement
+            {{"contact.form.policy.Please check the" | translate}}
+            <a [routerLink]="['/legal-notice']">{{"contact.form.policy.privacy policy" | translate}}</a> {{"contact.form.policy.agreement" | translate}}
           </span>
           
         </div>
         <button
           type="submit"
           class="btn"
+          [disabled]="!contactForm.valid || !email.valid"
+          [ngClass]="{'disabled-btn': !contactForm.valid || !email.valid || !privacyPolicy.valid}"
         >
          {{"contact.form.button" | translate}}
         </button>
