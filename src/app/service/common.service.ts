@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ViewportScroller } from '@angular/common';
-import { off } from 'node:process';
 
 @Injectable({
   providedIn: 'root',
@@ -11,11 +10,13 @@ export class CommonService {
   private anchorOffsets: {
     [key: string]: { desktop: number; tablet: number; mobile: number; };
   } = {
-    home: { desktop: 0, tablet: 0, mobile: 0,  },
+    home: { desktop: 0, tablet: 0, mobile: 0 },
     about: { desktop: -100, tablet: -120, mobile: -10 },
     projects: { desktop: -70, tablet: -60, mobile: -10 },
-    contact: { desktop: -100, tablet: -70, mobile: -10},
+    contact: { desktop: -100, tablet: -70, mobile: -10 },
   };
+
+  selectedAnchor: string = 'home';
 
   /**
    * Scroll to a specific anchor within the page
@@ -48,5 +49,27 @@ export class CommonService {
     }
   }
 
-  selectedAnchor: string = 'home';
+  /**
+   * Detect the currently visible section and update selectedAnchor
+   */
+  updateAnchorOnScroll() {
+    const anchors = Object.keys(this.anchorOffsets);
+    let currentAnchor = this.selectedAnchor;
+
+    for (let anchor of anchors) {
+      const element = document.getElementById(anchor);
+
+      if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          currentAnchor = anchor;
+          break;
+        }
+      }
+    }
+
+    if (currentAnchor !== this.selectedAnchor) {
+      this.selectedAnchor = currentAnchor;
+    }
+  }
 }
