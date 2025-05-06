@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, ElementRef, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -51,6 +52,21 @@ export class AppComponent implements AfterViewInit {
       script.setAttribute('chatbotId', 'qJaLxkjW-3fi4q1hSxR6z');
       script.setAttribute('domain', 'www.chatbase.co');
       document.body.appendChild(script);
+
+      const observer = new MutationObserver((mutationsList, observer) => {
+        const chatWindow = document.getElementById("chatbase-bubble-window");
+        if(chatWindow){
+          chatWindow.style.height = "60dvh";
+          observer.disconnect();
+          const isMobile = window.innerWidth <= 768;
+          if(isMobile){
+            chatWindow.style.height = "60dvh";
+          }
+        }
+  
+      })
+      observer.observe(document.body, { childList: true, subtree: true });
     }
+
   }
 }
